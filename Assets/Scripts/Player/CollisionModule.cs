@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using System.Linq;
 
 public class CollisionModule : MonoBehaviour
 {
@@ -18,6 +19,15 @@ public class CollisionModule : MonoBehaviour
     {
         //Get the PController Component
         playerController = GetComponent<PlayerController>();
+    }
+
+    private void Update()
+    {
+        //Check If Collisions is Empty
+        if (!currentCollisions.Any())
+        {
+            playerController.gameController.buttonHelpMenu.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +61,7 @@ public class CollisionModule : MonoBehaviour
         }
 
         //Player enters Generator Trigger
-        if (collision.gameObject.tag == "GeneratorButton")
+        if (collision.gameObject.tag == "Generator")
         {
             playerController.isPlayerInGenerator = true;
 
@@ -63,18 +73,13 @@ public class CollisionModule : MonoBehaviour
             playerController.currentRoom = collision.gameObject.GetComponent<RoomModule>();
         }
 
-        //Set the current Collision object
-        currentCollisions.Add(collision.gameObject);
+        //Do NOT add Rooms to collisions
 
-        #region Old Light Trigger (Light Turns on When Entering)
-        //Lighting
-        //if(collision.gameObject.tag == "Light")
-        //{
-        //    //Enable Light
-        //    collision.gameObject.GetComponent<Light2D>().intensity = 0.29f;
-        //}
-
-        #endregion
+        if (collision.gameObject.tag != "Room")
+        {
+            //Set the current Collision object
+            currentCollisions.Add(collision.gameObject);
+        }
     }
 
 
@@ -96,7 +101,6 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to False
             playerController.isPlayerInLightswitch = false;
 
-
         }
 
         //Player Exits Fusebox Trigger
@@ -105,10 +109,9 @@ public class CollisionModule : MonoBehaviour
             //Set bool Trigger to False
             playerController.isPlayerInFusebox = false;
 
-
         }
 
-        if (collision.gameObject.tag == "GeneratorButton")
+        if (collision.gameObject.tag == "Generator")
         {
             playerController.isPlayerInGenerator = false;
 

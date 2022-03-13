@@ -1340,6 +1340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GeneratorButton (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2752131381112198527, guid: df44479ce60734734a2cc40e146f14e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2789146267883394262, guid: df44479ce60734734a2cc40e146f14e1, type: 3}
       propertyPath: m_RootOrder
       value: 5
