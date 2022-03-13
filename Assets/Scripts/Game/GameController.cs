@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
+using TMPro;
 
 public class GameController : MonoBehaviour { 
 
@@ -17,8 +18,17 @@ public class GameController : MonoBehaviour {
     //Bool Blown Fuse
     public bool isFuseBlown = false;
 
-    //Bool Randomly Generat Rooms (ON/OFF)
+    //Bool Randomly Generate Rooms (ON/OFF)
     public bool randomlyGenerateRooms = true;
+
+    //Bool: Help Key Menu Activate
+    public bool isHelpButtonActive;
+
+    //Help Button Panel
+    public GameObject buttonHelpMenu;
+
+    //Help Button Text
+    public TMP_Text helpButtonText;
 
     private void Start()
     {
@@ -36,12 +46,23 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+
+        //Activate Help Menu
+        buttonHelpMenu.SetActive(isHelpButtonActive);
+       
+    }
+
     //Play Spawn Function
     public void SpawnPlayer(Vector3 pos)
     {
-        //Resposition Player
-
         //Instantiate Player
         Instantiate(playerPrefab, pos, Quaternion.identity);
+    }
+
+    public void SetHelpMenuText(string text)
+    {
+        helpButtonText.text = text;
     }
 }

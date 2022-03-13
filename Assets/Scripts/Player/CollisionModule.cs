@@ -27,6 +27,8 @@ public class CollisionModule : MonoBehaviour
         {
             //Set Bool Trigger to True
             playerController.isPlayerInStaircase = true;
+
+            playerController.gameController.SetHelpMenuText("Press E to use Staircase!");
         }
 
         //Player Enters Switch Trigger
@@ -34,6 +36,8 @@ public class CollisionModule : MonoBehaviour
         {
             //Set Bool Trigger to True
             playerController.isPlayerInLightswitch = true;
+
+            playerController.gameController.SetHelpMenuText("Press Q to use Light Switch!");
         }
 
         //Player Enters Fusebox Trigger
@@ -41,12 +45,17 @@ public class CollisionModule : MonoBehaviour
         {
             //Set Bool Trigger to True
             playerController.isPlayerInFusebox = true;
+
+
+            playerController.gameController.SetHelpMenuText("Press Z to use Fusebox!");
         }
 
         //Player enters Generator Trigger
         if (collision.gameObject.tag == "GeneratorButton")
         {
             playerController.isPlayerInGenerator = true;
+
+            playerController.gameController.SetHelpMenuText("Press S to use Generator!");
         }
 
         if (collision.gameObject.tag == "Room")
@@ -78,6 +87,7 @@ public class CollisionModule : MonoBehaviour
         {
             //Set Bool Trigger to False
             playerController.isPlayerInStaircase = false;
+
         }
 
         //Player Exits Switch Trigger
@@ -85,6 +95,8 @@ public class CollisionModule : MonoBehaviour
         {
             //Set Bool Trigger to False
             playerController.isPlayerInLightswitch = false;
+
+
         }
 
         //Player Exits Fusebox Trigger
@@ -92,26 +104,18 @@ public class CollisionModule : MonoBehaviour
         {
             //Set bool Trigger to False
             playerController.isPlayerInFusebox = false;
+
+
         }
 
         if (collision.gameObject.tag == "GeneratorButton")
         {
             playerController.isPlayerInGenerator = false;
+
         }
 
         //Update Current Collision Object
         currentCollisions.Remove(collision.gameObject);
-
-
-        #region Old Light Trigger (Light Turns off When Exitting)
-        //Lighting
-        //if (collision.gameObject.tag == "Light")
-        //{
-        //    //Disable Light
-        //    collision.gameObject.GetComponent<Light2D>().intensity = 0;
-        //}
-
-        #endregion
     }
 
 }
