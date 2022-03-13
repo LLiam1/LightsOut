@@ -7,6 +7,10 @@ public class FuseboxController : MonoBehaviour
     //Get GameController
     private GameController gameController;
 
+    private bool isFuseOpen = false;
+
+    public GameObject fuseBoxTaskUI;
+
     private void Start()
     {
         //Get Game Controller
@@ -16,11 +20,27 @@ public class FuseboxController : MonoBehaviour
     //Fix Fuse Function
     public void FixFusebox()
     {
-        //Fuse is no longer Blown
-        gameController.isFuseBlown = false;
-
-        //TODO: Some effect to show Electricity has been restored
-        Debug.Log("Fuse Fixed!");
+        
+        if (gameController.isFuseBlown)
+        {
+            if (isFuseOpen)
+            {
+                //If Open close it
+                fuseBoxTaskUI.SetActive(false);
+            }
+            else
+            {
+                //Spawn Task Window
+                fuseBoxTaskUI.SetActive(true);
+            }
+        }
     }
 
+    private void Update()
+    {
+        if(!gameController.isFuseBlown)
+        {
+            fuseBoxTaskUI.SetActive(false);
+        }
+    }
 }

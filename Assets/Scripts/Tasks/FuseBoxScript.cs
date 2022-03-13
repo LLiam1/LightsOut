@@ -11,9 +11,13 @@ public class FuseBoxScript : MonoBehaviour
     public int currentVal;
     Toggle currentToggle;
 
+    private GameController gameController;
+
     void Start()
     {
         currentVal = 0;
+
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
     public void OnEnable()
     {
@@ -32,18 +36,40 @@ public class FuseBoxScript : MonoBehaviour
         if (currentToggle.isOn == true)
         {
             currentVal += number;
+
+
+            ColorBlock colors = currentToggle.colors;
+
+            colors.normalColor = Color.green;
+
+            currentToggle.colors = colors;
         }
 
         if (currentToggle.isOn == false)
         {
             currentVal -= number;
+            
+            ColorBlock colors = currentToggle.colors;
+
+            colors.normalColor = Color.white;
+
+            currentToggle.colors = colors;
         }
-
-
     }
 
     void Update()
     {
-        targetValText.text = "Target Val: " + targetVal + " | CurrentVal: " + currentVal;
+        if (gameController.isFuseBlown) {
+            targetValText.text = "Target Val: " + targetVal + " | CurrentVal: " + currentVal;
+        }
+
+        if(currentVal == targetVal)
+        {
+            //Fuse Fixed
+            gameController.isFuseBlown = false;
+
+            //Fuse Fixed
+            targetValText.text = "FuseBox Reset! Lights Activated!";
+        }
     }
 }
