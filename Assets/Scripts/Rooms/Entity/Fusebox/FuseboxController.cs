@@ -26,11 +26,13 @@ public class FuseboxController : MonoBehaviour
             if (isFuseOpen)
             {
                 //If Open close it
-                fuseBoxTaskUI.SetActive(false);
+                fuseBoxTaskUI.GetComponent<FuseBoxScript>().enabled = false;
+                fuseBoxTaskUI.SetActive(true);
             }
             else
             {
                 //Spawn Task Window
+                fuseBoxTaskUI.GetComponent<FuseBoxScript>().enabled = true;
                 fuseBoxTaskUI.SetActive(true);
             }
         }
@@ -42,5 +44,6 @@ public class FuseboxController : MonoBehaviour
         {
             fuseBoxTaskUI.SetActive(false);
         }
+
     }
 }

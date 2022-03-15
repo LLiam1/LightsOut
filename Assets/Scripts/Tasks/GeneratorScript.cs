@@ -43,7 +43,7 @@ public class GeneratorScript : MonoBehaviour
             if(generatorCurrentVal <= 0) generatorCurrentVal = 0;
             if(generatorCurrentVal >= generatorCompleteVal){
                 generatorCurrentVal = 0;
-                thisTask.SetActive(false);
+                Destroy(this);
 
             } 
                  

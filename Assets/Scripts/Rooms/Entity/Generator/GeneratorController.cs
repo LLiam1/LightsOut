@@ -34,7 +34,7 @@ public class GeneratorController : MonoBehaviour
         gameController.generatorActiveCount++;
 
         //Instantiate Popup
-        //currentPopup = Instantiate(popupPrefab, popupPrefab.transform.position, Quaternion.identity, gameController.uiParent.transform);
+        currentPopup = Instantiate(popupPrefab, gameController.uiParent.transform.position, Quaternion.identity, gameController.uiParent.transform);
 
         //Display Appropriate Amounts
         //currentPopup.GetComponentInChildren<GenPopupController>().progressbar.value = currentActivationAmt;
