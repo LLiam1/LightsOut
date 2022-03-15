@@ -127,9 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc477ac741c514398a2ec54c52f41553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupPrefab: {fileID: 0}
-  currentActivationAmt: 0
-  maxActivationAmt: 50
+  popupPrefab: {fileID: 2054964668582757302, guid: 42a3547d260ab4a7a805b90e32356f70, type: 3}
   isGeneratorActive: 0
   currentPopup: {fileID: 0}
 --- !u!58 &3540979457023805848

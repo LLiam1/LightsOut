@@ -81,17 +81,21 @@ public class InputModule : MonoBehaviour
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
             {
                 //Check if Gameobject is a Staircase
-                if (playerController.collisionModule.currentCollisions[i].tag == "GeneratorButton")
+                if (playerController.collisionModule.currentCollisions[i].tag == "Generator")
                 {
                     //Check if Popup exists
-                    if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().currentPopup)
+                    if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().currentPopup == null)
                     {
-                        //Destroy Object if the Window is Already Open.
-                        Destroy(playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().currentPopup);
-                    }
 
-                    //Display Window
-                    playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayPopupWindow();
+
+                        if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().isGeneratorActive == false)
+                        {
+                            //Display Window
+                            playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayPopupWindow();
+
+
+                        }
+                    }
                 }
             }
         }

@@ -38,7 +38,10 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInStaircase = true;
 
-            playerController.gameController.SetHelpMenuText("Press E to use Staircase!");
+            if (!playerController.gameController.isGameOver)
+            {
+                playerController.gameController.SetHelpMenuText("Press E to use Staircase!");
+            }
         }
 
         //Player Enters Switch Trigger
@@ -47,7 +50,10 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInLightswitch = true;
 
-            playerController.gameController.SetHelpMenuText("Press Q to use Light Switch!");
+            if (!playerController.gameController.isGameOver)
+            {
+                playerController.gameController.SetHelpMenuText("Press Q to use Light Switch!");
+            }
         }
 
         //Player Enters Fusebox Trigger
@@ -56,8 +62,10 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInFusebox = true;
 
-
-            playerController.gameController.SetHelpMenuText("Press Z to use Fusebox!");
+            if (!playerController.gameController.isGameOver)
+            {
+                playerController.gameController.SetHelpMenuText("Press Z to use Fusebox!");
+            }
         }
 
         //Player enters Generator Trigger
@@ -65,7 +73,10 @@ public class CollisionModule : MonoBehaviour
         {
             playerController.isPlayerInGenerator = true;
 
-            playerController.gameController.SetHelpMenuText("Press S to use Generator!");
+            if (!playerController.gameController.isGameOver)
+            {
+                playerController.gameController.SetHelpMenuText("Press S to use Generator!");
+            }
         }
 
         if (collision.gameObject.tag == "Room")

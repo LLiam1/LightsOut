@@ -18,6 +18,9 @@ public class GameController : MonoBehaviour {
     //Bool Blown Fuse
     public bool isFuseBlown = false;
 
+    //Bool is Generators Active
+    public bool isGeneratorsActive = false;
+
     //Bool Randomly Generate Rooms (ON/OFF)
     public bool randomlyGenerateRooms = true;
 
@@ -29,6 +32,16 @@ public class GameController : MonoBehaviour {
 
     //Help Button Text
     public TMP_Text helpButtonText;
+
+    //Parent Canvas
+    public Transform uiParent;
+
+    //Int
+    public int generatorActiveCount = 0;
+
+    public bool isGameOver = false;
+
+    public bool isWinner = false;
 
     private void Start()
     {
@@ -50,8 +63,22 @@ public class GameController : MonoBehaviour {
     {
 
         //Activate Help Menu
+        if (isGameOver) {
+            if (isWinner)
+            {
+                SetHelpMenuText("You Escaped!");
+            }  else
+            {
+                SetHelpMenuText("Game Over!");
+            }
+        }
+
+        if(generatorActiveCount >= 3)
+        {
+            isGeneratorsActive = true;
+        }
+
         buttonHelpMenu.SetActive(isHelpButtonActive);
-       
     }
 
     //Play Spawn Function

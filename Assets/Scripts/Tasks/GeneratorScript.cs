@@ -42,7 +42,6 @@ public class GeneratorScript : MonoBehaviour
 
         //Powering the Generator
         if (generatorCurrentVal >= 0) generatorCurrentVal += deltaRotation;
-        if (generatorCurrentVal <= 0) generatorCurrentVal = 0;
         if (generatorCurrentVal >= generatorCompleteVal)
         {
             generatorCurrentVal = 0;

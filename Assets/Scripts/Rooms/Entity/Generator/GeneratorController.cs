@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class GeneratorController : MonoBehaviour
 {
-    //TODO: REDO THIS CLASS
-
-
+    //TODO: REDO THIS CLAS
     //Generator Popup Window
     public GameObject popupPrefab;
-
-    //Current Activation Value
-    public float currentActivationAmt;
-
-    //Maximium Activation Amount
-    public float maxActivationAmt = 50;
 
     //Generator Status
     public bool isGeneratorActive = false;
@@ -22,30 +14,27 @@ public class GeneratorController : MonoBehaviour
     //Current Popup
     public GameObject currentPopup;
 
+    private GameController gameController;
+
+    private void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+    }
+
     public void Update()
     {
-        //Verify Popup is Activated
-        if (currentPopup != null)
-        {
-            //Assign Current Amount
-            //currentActivationAmt = currentPopup.GetComponentInChildren<GenPopupController>().progressbar.value;
-
-            ////Check if it is more than the maximium.
-            //if (currentActivationAmt >= maxActivationAmt)
-            //{
-            //    //Generator is Active
-            //    isGeneratorActive = true;
-
-            //    //Now Destroy the Popup
-            //    Destroy(currentPopup);
-            //}
-        }
+        
     }
 
     public void DisplayPopupWindow()
     {
+
+        isGeneratorActive = true;
+
+        gameController.generatorActiveCount++;
+
         //Instantiate Popup
-        currentPopup = Instantiate(popupPrefab, transform.position, Quaternion.identity);
+        //currentPopup = Instantiate(popupPrefab, popupPrefab.transform.position, Quaternion.identity, gameController.uiParent.transform);
 
         //Display Appropriate Amounts
         //currentPopup.GetComponentInChildren<GenPopupController>().progressbar.value = currentActivationAmt;
