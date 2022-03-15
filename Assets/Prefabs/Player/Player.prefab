@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3a8d93b9a4d0e48f7935b4bf6ab729f9, type: 3}
-  m_Color: {r: 0, g: 0.37924838, b: 0.4433962, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3075010276327757306}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -0.75, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3075010276393950870}
@@ -138,8 +138,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3075010276393950871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2.5, z: 1}
+  m_LocalPosition: {x: 0.41, y: 0, z: 0}
+  m_LocalScale: {x: 4.0622997, y: 2.8773272, z: 1.3541}
   m_Children: []
   m_Father: {fileID: 3075010276327757285}
   m_RootOrder: 0
@@ -181,21 +181,13 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: 0.27957988, y: -0.7227373, z: 0}
-  - {x: 0.57969904, y: -0.8597412, z: 0}
-  - {x: 0.89524317, y: -0.9896717, z: 0}
-  - {x: 1.1310883, y: -1.0011578, z: 0}
-  - {x: 1.2664714, y: -0.84117985, z: 0}
-  - {x: 1.3964014, y: -0.63700485, z: 0}
-  - {x: 1.5077698, y: -0.39570618, z: 0}
-  - {x: 1.6005778, y: -0.13584614, z: 0}
-  - {x: 1.414963, y: 0.012645245, z: 0}
-  - {x: 1.0437346, y: 0.16113663, z: 0}
-  - {x: 0.67250586, y: 0.34675074, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: 0.319839, y: 0.32818937, z: 0}
-  - {x: 0.17134774, y: 0.23538208, z: 0}
-  - {x: -0.20301723, y: -0.09396553, z: 0}
+  - {x: 0.2327846, y: -0.6804615, z: 0}
+  - {x: 0.87798417, y: -0.95233023, z: 0}
+  - {x: 1.4142107, y: -1.3372556, z: 0}
+  - {x: 1.4854165, y: 0.7483049, z: 0}
+  - {x: 0.8908639, y: 0.46377322, z: 0}
+  - {x: 0.29269263, y: 0.42005786, z: 0}
+  - {x: -0.0734441, y: -0.0012296592, z: 0}
 --- !u!1 &3075010276503761850
 GameObject:
   m_ObjectHideFlags: 0

@@ -86,7 +86,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -98,7 +98,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -314,7 +314,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -326,7 +326,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -435,7 +435,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.40784317, g: 1, b: 0.39607847, a: 1}
@@ -463,7 +463,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -475,7 +475,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -487,7 +487,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!222 &164930603319422797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 164930603335310696}
   - component: {fileID: 164930603335310702}
   - component: {fileID: 164930603335310697}
-  - component: {fileID: 164930603335310703}
+  - component: {fileID: 2728389440531136037}
   m_Layer: 5
   m_Name: FuseBoxTask
   m_TagString: Untagged
@@ -604,7 +604,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &164930603335310703
+--- !u!114 &2728389440531136037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,12 +613,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 164930603335310699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dc5030ee9e4042caba57c7e76107aad, type: 3}
+  m_Script: {fileID: 11500000, guid: 67d28f216ef59db459b3452771acce38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetValText: {fileID: 164930603565531416}
   targetVal: 0
   currentVal: 0
+  sr: {fileID: 0}
+  toggleUp: {fileID: 21300000, guid: 00f01741eca3b734692923a0983961b4, type: 3}
+  toggleDown: {fileID: 21300000, guid: 6f863a2569e2fd94a88e4d125ea147eb, type: 3}
 --- !u!1 &164930603442940477
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +787,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -796,7 +799,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -1012,7 +1015,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -1024,7 +1027,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -1240,7 +1243,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -1252,7 +1255,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -1628,7 +1631,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -1640,7 +1643,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -2365,7 +2368,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -2377,7 +2380,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -2514,7 +2517,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -2526,7 +2529,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -2742,7 +2745,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -2754,7 +2757,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -2891,7 +2894,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -2903,7 +2906,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
@@ -3040,7 +3043,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: GetToggle
         m_Mode: 2
@@ -3052,7 +3055,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164930603335310703}
+      - m_Target: {fileID: 2728389440531136037}
         m_TargetAssemblyTypeName: FuseBoxScript, Assembly-CSharp
         m_MethodName: ToggleClick
         m_Mode: 3
