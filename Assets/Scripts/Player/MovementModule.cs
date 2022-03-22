@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovementModule : MonoBehaviour
 {
+    //Player Controller Component
     private PlayerController playerController;
 
     private void Awake()

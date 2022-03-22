@@ -26,6 +26,9 @@ public class RoomModule : MonoBehaviour
 
     public int X, Y;
 
+    //GameObject: Position for Camera to Be at
+    public GameObject pos;
+
 
     private void Start()
     {
@@ -39,6 +42,8 @@ public class RoomModule : MonoBehaviour
                 theseNeighbors.Add(hit.collider.gameObject.GetComponent<RoomModule>());
             }
         }
+
+       
     }
 
     private void Update()
