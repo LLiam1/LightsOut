@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public CollisionModule collisionModule;
     public InputModule inputModule;
 
+    //Current Room Player is in
     public RoomModule currentRoom;
 
     //Game Controller
