@@ -22,7 +22,7 @@ public class ElevatorController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (gameController.isGeneratorsActive && collision.gameObject.tag == "Player")
+        if (gameController.isElevatorActive && collision.gameObject.tag == "Player")
         {
             //Debug
             gameController.isGameOver = true;

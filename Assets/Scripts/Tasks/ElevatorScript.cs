@@ -10,13 +10,16 @@ public class ElevatorScript : MonoBehaviour
     public float startTime;
     public bool isMoving;
 
-    public Text elevatorStatus; 
+    public bool isElevatorActive;
 
-    string elevatorMoveStatus;
+    public Text elevatorStatus; 
+    float randomStop;
+
     
 
     void Start(){
         timeUntilArrival = startTime;
+        isElevatorActive = false; 
     }
 
     void Awake()
@@ -25,15 +28,20 @@ public class ElevatorScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
         if(isMoving == true){
             timeUntilArrival -= Time.deltaTime;
-            elevatorMoveStatus = "Moving";
+            elevatorStatus.text = "Moving";
+            Debug.Log(randomStop);
+            if(timeUntilArrival <= randomStop){
+                isMoving = false;
+            }
+            
         }
 
         else{
-            elevatorMoveStatus = "Not Moving";
+            elevatorStatus.text = "Not Moving";
         }
 
 
@@ -41,6 +49,9 @@ public class ElevatorScript : MonoBehaviour
 
     public void ElevatorGo(){
         isMoving = true;
+        for(int i = 0; i < 1; i++){
+           randomStop = Random.Range(-15, timeUntilArrival);
+        }
 
     }
 }

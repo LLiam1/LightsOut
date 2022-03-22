@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour {
     public bool isFuseBlown = false;
 
     //Bool is Generators Active
-    public bool isGeneratorsActive = false;
+    public bool isElevatorActive = false;
 
     //Bool Randomly Generate Rooms (ON/OFF)
     public bool randomlyGenerateRooms = true;
@@ -75,7 +75,7 @@ public class GameController : MonoBehaviour {
 
         if(generatorActiveCount >= 3)
         {
-            isGeneratorsActive = true;
+            isElevatorActive = true;
         }
 
         buttonHelpMenu.SetActive(isHelpButtonActive);
