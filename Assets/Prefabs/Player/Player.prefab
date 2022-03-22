@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3075010276074062799}
   - component: {fileID: 3075010276074062798}
+  - component: {fileID: 5035618684251647681}
   m_Layer: 0
   m_Name: Player-Sprite
   m_TagString: Untagged
@@ -82,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5035618684251647681
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075010276074062796}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c1f38ed0e12e402ead4b6449005b0f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3075010276327757306
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +274,9 @@ MonoBehaviour:
   isPlayerInLightswitch: 0
   isPlayerInFusebox: 0
   isPlayerInGenerator: 0
+  isPlayerWalking: 0
   isFlashLightEnabled: 1
+  animator: {fileID: 5035618684251647681}
 --- !u!114 &3075010276503761825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,10 +352,10 @@ BoxCollider2D:
   m_Offset: {x: -0.12, y: -0.55}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 15.090821, y: 25.500002}
+    newSize: {x: 15.090821, y: 25.500002}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
