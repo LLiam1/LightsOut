@@ -11,41 +11,49 @@ public class FuseBoxScript : MonoBehaviour
     public int currentVal; 
     Toggle currentToggle;
 
-    public Image sr;
+    public Image toggleImage;
     public Sprite toggleUp;
     public Sprite toggleDown;
+
+    public GameController fuse; 
     
     void Start(){
         currentVal = 0;
     }
     public void OnEnable(){
         targetVal = Random.Range(1, 78);
-        sr.sprite = toggleUp;
+        this.enabled = true;
 
         //inputCode.text = string.Empty;
     }
 
     public void GetToggle(Toggle thisToggle){
         currentToggle = thisToggle;
-        sr = thisToggle.GetComponent<Image>();
+        toggleImage = thisToggle.GetComponent<Image>();
+        toggleImage.sprite = toggleUp;
     }
 
     public void ToggleClick(int number){
         if(currentToggle.isOn == true){
             currentVal += number;
-            sr.sprite = toggleDown;
-
+            toggleImage.sprite = toggleDown;
         }
 
         if(currentToggle.isOn == false){
             currentVal -= number;
-            sr.sprite = toggleUp;
+            toggleImage.sprite = toggleUp;
         }
 
 
     }
 
     void Update(){
-        targetValText.text = "Target Val: " + targetVal + " | CurrentVal: " + currentVal ;
+        targetValText.text = "Target: " + targetVal + " | Current: " + currentVal ;
+        //Debug.Log("Target Val: " + targetVal + " | CurrentVal: " + currentVal);
+
+        if(targetVal == currentVal){
+            fuse.isFuseBlown = false;
+            this.enabled = false;
+        }
     }
 }
