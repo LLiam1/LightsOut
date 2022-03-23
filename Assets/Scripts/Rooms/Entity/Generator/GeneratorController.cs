@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GeneratorController : MonoBehaviour
-{
-    //TODO: REDO THIS CLAS
+{ 
     //Generator Popup Window
     public GameObject popupPrefab;
 

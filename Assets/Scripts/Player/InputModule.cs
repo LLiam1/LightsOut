@@ -92,8 +92,6 @@ public class InputModule : MonoBehaviour
                         {
                             //Display Window
                             playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayPopupWindow();
-
-
                         }
                     }
                 }
@@ -101,6 +99,7 @@ public class InputModule : MonoBehaviour
         }
 
 
+        //Below is Checking if Flash light is Enabled
         if (playerController.isFlashLightEnabled)
         {
             //Player moving the mouse to rotate the flashlight
@@ -113,8 +112,37 @@ public class InputModule : MonoBehaviour
             flashlight.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         } else
         {
+            //Flash Light Disabled
             flashlight.SetActive(false);
         }
 
+
+        //Zoom Out to View the entire Level
+        if (Input.GetKey(playerController.fullLevelViewKey) && !playerController.isPlayerWalking)
+        {
+            //Player is Holding Key && is NOT moving
+            if (Vector3.Distance(playerController.cam.transform.position, playerController.startCamPosition) > 0.01)
+            {
+                playerController.cam.transform.position
+                    = Vector3.MoveTowards(playerController.cam.transform.position, playerController.startCamPosition, playerController.camMoveOutSpeed * Time.deltaTime); ;
+            }
+
+            //Player is Viewing Full Level
+            playerController.isViewingFullLevel = true;
+            
+        }
+        else
+        {
+            //Check Distance
+            if (Vector2.Distance(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position) > 0.01)
+            {
+                playerController.cam.transform.position
+                    = Vector3.MoveTowards(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime); ;
+            }
+
+            playerController.isViewingFullLevel = false;
+        }
+
+        
     }
 }
