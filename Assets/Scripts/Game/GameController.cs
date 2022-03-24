@@ -36,11 +36,13 @@ public class GameController : MonoBehaviour {
     //Parent Canvas
     public Transform uiParent;
 
-    //Int
+    //Int: Generator Count
     public int generatorActiveCount = 0;
 
+    //Bool: Tracks if Game is Over
     public bool isGameOver = false;
 
+    //Bool: Tracks if Player Won
     public bool isWinner = false;
 
     private void Start()
@@ -82,10 +84,14 @@ public class GameController : MonoBehaviour {
     }
 
     //Play Spawn Function
-    public void SpawnPlayer(Vector3 pos)
+    public void SpawnPlayer(RoomModule spawnRoom)
     {
+        Vector3 spawnPos = new Vector3(spawnRoom.transform.position.x, spawnRoom.transform.position.y + 3.25f, spawnRoom.transform.position.z);
+
         //Instantiate Player
-        Instantiate(playerPrefab, pos, Quaternion.identity);
+        GameObject player = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
+
+        player.GetComponent<PlayerController>().SetCameraPosition(spawnRoom);
     }
 
     public void SetHelpMenuText(string text)

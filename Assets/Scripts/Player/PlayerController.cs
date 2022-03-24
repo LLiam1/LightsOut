@@ -60,6 +60,13 @@ public class PlayerController : MonoBehaviour
 
     //Float: Zoom Out Speed
     public float camMoveOutSpeed;
+
+    //Enum: Player Facing Direction
+    private enum PlayerDirection { Left, Right }
+
+    //PlayerDirection: Facing Dir
+    private PlayerDirection dir;
+
     
     private void Awake()
     {
@@ -74,21 +81,19 @@ public class PlayerController : MonoBehaviour
 
         //Set Camera Starting Position
         startCamPosition = cam.transform.position;
-         
+
+        //Set Default Direction
+        dir = PlayerDirection.Right;
     }
 
     private void Update()
     {
         //Set the Animator Bool in Animator
         animator.SetBool("isPlayerWalking", isPlayerWalking);
-    }
 
-    private void FixedUpdate()
-    {
-        //Player is NOT viewing full level
+        //Check to make sure Player is not Viewing Full Level
         if (!isViewingFullLevel)
         {
-
             //Check if Player is Moving
             if (Input.GetAxis("Horizontal") > deadZone && Input.GetAxis("Horizontal") > 0 ||
                 Input.GetAxis("Horizontal") < 0 && Input.GetAxis("Horizontal") < deadZone)
@@ -101,10 +106,49 @@ public class PlayerController : MonoBehaviour
                 //Playerr is Not Walking
                 isPlayerWalking = false;
             }
+        }
 
+        //Flip Sprite Based on player walk direction
+        switch (dir)
+        {
+            //Right
+            case PlayerDirection.Right:
+                //Facing Right
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                break;
+            //Left
+            case PlayerDirection.Left:
+                //Facing Left
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                break;
+        }
+
+        //Set up Player Facing Direction
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            //Player Facing Right
+            dir = PlayerDirection.Right;
+        } else if(Input.GetAxis("Horizontal") < 0)
+        {
+            //Player Facing Left
+            dir = PlayerDirection.Left;
+        } 
+
+    }
+
+    private void FixedUpdate()
+    {
+        //Player is NOT viewing full level
+        if (!isViewingFullLevel) { 
+        
             //Call Player Movement
             movementModule.Movement(new Vector2(Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed, 0));
         }
     }
 
+    public void SetCameraPosition(RoomModule spawnRoom)
+    {
+        //Set Camera to current Room position
+        cam.transform.position = spawnRoom.pos.transform.position;
+    }
 }

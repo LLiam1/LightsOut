@@ -88,11 +88,6 @@ public class RoomController : MonoBehaviour
             //Set Room to be Entry Room
             entryRooms[rand].GetComponent<RoomModule>().isEntryRoom = true;
         }
-
-        foreach(GameObject r in GameObject.FindGameObjectsWithTag("Room"))
-        {
-            rooms.Add(r);
-        }
     }
 
     public void Update()
@@ -158,8 +153,20 @@ public class RoomController : MonoBehaviour
         //    }
         //}
 
+
+        foreach (GameObject r in GameObject.FindGameObjectsWithTag("Room"))
+        {
+            rooms.Add(r);
+        }
+
+        int rand = Random.Range(0, rooms.Count - 1);
+
+        Debug.Log(rand);
+
         //Spawn Player
-        gameController.SpawnPlayer(new Vector3(0.8f, 2.1f,0));
+        gameController.SpawnPlayer(rooms[rand].GetComponent<RoomModule>());
+
+        
 
         //Setup Light Switches
         gameController.lightController.SetupLights();

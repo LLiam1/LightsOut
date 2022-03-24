@@ -21,13 +21,13 @@ public class StaircaseController : MonoBehaviour
 
     private void Start()
     {
-
+        
         if (isUpStaircase)
         {
             //TODO: Check If Staircase is above (Possible no Room there or staircase)
 
             //Up Staircase
-            destination = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+            destination = new Vector3(transform.position.x, transform.position.y + 13, transform.position.z);
 
 
         }
