@@ -100,7 +100,7 @@ public class EnemyController : MonoBehaviour
                 //Check if Reached Target
                 if (Vector3.Distance(transform.position, roomDest.transform.position) > 0.001)
                 {
-                    float step = 5 * Time.deltaTime;
+                    float step = 3 * Time.deltaTime;
 
                     //Move to Target Position
                     transform.position = Vector2.MoveTowards(transform.position, roomDest.transform.position, step);
