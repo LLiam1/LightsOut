@@ -37,6 +37,23 @@ public class InputModule : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(playerController.elevatorIntKey) && playerController.isPlayerInElevator)
+        {
+            for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
+            {
+                //Check if Gameobject is an Elevator
+                if (playerController.collisionModule.currentCollisions[i].tag == "Elevator")
+                {
+
+                    //This will use the elevator through the Elevator Controller
+                    playerController.collisionModule.currentCollisions[i].gameObject.GetComponent<ElevatorController>().UseElevator();
+
+                    //Break out of Loops (Found what we needed)
+                    break;
+                }
+            }
+        }
+
         //Player is Interacting with Light Switch 
         if (Input.GetKeyDown(playerController.lightIntKey) && playerController.isPlayerInLightswitch && playerController.gameController.isFuseBlown == false)
         {
@@ -83,17 +100,18 @@ public class InputModule : MonoBehaviour
                 //Check if Gameobject is a Staircase
                 if (playerController.collisionModule.currentCollisions[i].tag == "Generator")
                 {
-                    //Check if Popup exists
-                    if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().currentPopup == null)
-                    {
+                    playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().ScoreOverRide();
+                    // //Check if Popup exists
+                    // if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().currentPopup == null)
+                    // {
 
 
-                        if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().isGeneratorActive == false)
-                        {
-                            //Display Window
-                            playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayPopupWindow();
-                        }
-                    }
+                    //     if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().isGeneratorActive == false)
+                    //     {
+                    //         //Display Window
+                    //         playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayPopupWindow();
+                    //     }
+                    // }
                 }
             }
         }

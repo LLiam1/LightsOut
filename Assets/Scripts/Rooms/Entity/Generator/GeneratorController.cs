@@ -7,6 +7,8 @@ public class GeneratorController : MonoBehaviour
     //Generator Popup Window
     public GameObject popupPrefab;
 
+    public AudioSource sound;
+
     //Generator Status
     public bool isGeneratorActive = false;
 
@@ -23,6 +25,18 @@ public class GeneratorController : MonoBehaviour
     public void Update()
     {
         
+    }
+
+    //Just for presentation until we can figure this out.
+    public void ScoreOverRide(){
+        if(isGeneratorActive == false){
+        gameController.generatorActiveCount++;
+        isGeneratorActive = true;
+        sound.Play();
+        }
+        else{
+           return;
+        }
     }
 
     public void DisplayPopupWindow()

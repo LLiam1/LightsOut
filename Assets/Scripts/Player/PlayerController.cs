@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode staircaseIntKey = KeyCode.E;
     public KeyCode lightIntKey = KeyCode.Q;
     public KeyCode fixFuseKey = KeyCode.Z;
+    public KeyCode elevatorIntKey = KeyCode.F;
     public KeyCode genIntKey = KeyCode.S;
     public KeyCode fullLevelViewKey = KeyCode.Space;
 
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerInLightswitch;
     public bool isPlayerInFusebox;
     public bool isPlayerInGenerator;
+    public bool isPlayerInElevator;
 
     //Bool: Checks Player Walking
     public bool isPlayerWalking;

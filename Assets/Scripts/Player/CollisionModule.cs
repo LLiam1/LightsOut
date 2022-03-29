@@ -44,6 +44,17 @@ public class CollisionModule : MonoBehaviour
             }
         }
 
+        if (collision.gameObject.tag == "Elevator")
+        {
+            //Set Bool Trigger to True
+            playerController.isPlayerInStaircase = true;
+
+            if (!playerController.gameController.isGameOver)
+            {
+                playerController.gameController.SetHelpMenuText("Press F to use Elevator!");
+            }
+        }
+
         //Player Enters Switch Trigger
         if (collision.gameObject.tag == "LightSwitch")
         {

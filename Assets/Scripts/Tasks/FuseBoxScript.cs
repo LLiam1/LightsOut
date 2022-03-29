@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -49,7 +49,7 @@ public class FuseBoxScript : MonoBehaviour
 
     void Update(){
         targetValText.text = "Target: " + targetVal + " | Current: " + currentVal ;
-        //Debug.Log("Target Val: " + targetVal + " | CurrentVal: " + currentVal);
+        //sDebug.Log("Target Val: " + targetVal + " | CurrentVal: " + currentVal);
 
         if(targetVal == currentVal){
             fuse.isFuseBlown = false;

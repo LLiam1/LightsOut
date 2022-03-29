@@ -281,7 +281,7 @@ MonoBehaviour:
   animator: {fileID: 5035618684251647681}
   cam: {fileID: 0}
   startCamPosition: {x: 0, y: 0, z: 0}
-  camMoveSpeed: 20
+  camMoveSpeed: 50
   camMoveOutSpeed: 30
 --- !u!114 &3075010276503761825
 MonoBehaviour:
