@@ -876,9 +876,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.212504, y: -1.1967362}
+  m_Offset: {x: 1.2276512, y: -1.0452622}
   serializedVersion: 2
-  m_Radius: 0.38083547
+  m_Radius: 0.51716197
 --- !u!82 &537382815 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 8113414610119978228, guid: df44479ce60734734a2cc40e146f14e1, type: 3}

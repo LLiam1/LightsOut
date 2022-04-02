@@ -142,6 +142,8 @@ public class InputModule : MonoBehaviour
             if (Vector3.Distance(playerController.cam.transform.position, playerController.startCamPosition) > 0.01)
             {
                 playerController.cam.transform.position
+                    = Vector3.Lerp(playerController.cam.transform.position, playerController.startCamPosition, playerController.camMoveOutSpeed * Time.deltaTime); ;
+                playerController.cam.transform.position
                     = Vector3.MoveTowards(playerController.cam.transform.position, playerController.startCamPosition, playerController.camMoveOutSpeed * Time.deltaTime); ;
             }
 
@@ -154,6 +156,8 @@ public class InputModule : MonoBehaviour
             //Check Distance
             if (Vector2.Distance(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position) > 0.01)
             {
+                playerController.cam.transform.position
+                    = Vector3.Lerp(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime);
                 playerController.cam.transform.position
                     = Vector3.MoveTowards(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime); ;
             }

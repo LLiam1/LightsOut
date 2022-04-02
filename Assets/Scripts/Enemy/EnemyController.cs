@@ -246,6 +246,14 @@ public class EnemyController : MonoBehaviour
         {
             //Attack Player
             enemyState = EnemyState.Attacking;
+
+        } 
+
+        if(collision.gameObject.tag == "Player")
+        {
+            //Attack Player
+            Destroy(collision.gameObject);
+            
         } 
     }
 }

@@ -8,6 +8,8 @@ public class ElevatorController : MonoBehaviour
     private GameController gameController;
     public bool isElevatorHere;
 
+    private bool isElevatorOpen;
+
     public GameObject elevatorObject;
 
     // Start is called before the first frame update
@@ -21,6 +23,7 @@ public class ElevatorController : MonoBehaviour
     // Update is called once per frame
     public void UseElevator()
     {
+        //if(elev)
        if(isElevatorHere == false){
            elevatorObject.GetComponent<ElevatorScript>().enabled = true;
            elevatorObject.SetActive(true);

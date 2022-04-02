@@ -269,20 +269,22 @@ MonoBehaviour:
   staircaseIntKey: 101
   lightIntKey: 113
   fixFuseKey: 122
+  elevatorIntKey: 102
   genIntKey: 115
   fullLevelViewKey: 32
   isPlayerInStaircase: 0
   isPlayerInLightswitch: 0
   isPlayerInFusebox: 0
   isPlayerInGenerator: 0
+  isPlayerInElevator: 0
   isPlayerWalking: 0
   isViewingFullLevel: 0
   isFlashLightEnabled: 1
   animator: {fileID: 5035618684251647681}
   cam: {fileID: 0}
   startCamPosition: {x: 0, y: 0, z: 0}
-  camMoveSpeed: 50
-  camMoveOutSpeed: 30
+  camMoveSpeed: 10
+  camMoveOutSpeed: 5
 --- !u!114 &3075010276503761825
 MonoBehaviour:
   m_ObjectHideFlags: 0
