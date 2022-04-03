@@ -33,8 +33,6 @@ public class ElevatorController : MonoBehaviour
             gameController.isGameOver = true;
             gameController.isWinner = true;
 
-            gameController.SetHelpMenuText("Game Over");
-
             Debug.Log("You Escaped the Level!");
        }
     }

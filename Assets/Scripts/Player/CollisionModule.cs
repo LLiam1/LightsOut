@@ -23,11 +23,7 @@ public class CollisionModule : MonoBehaviour
 
     private void Update()
     {
-        //Check If Collisions is Empty
-        if (!currentCollisions.Any())
-        {
-            playerController.gameController.buttonHelpMenu.SetActive(false);
-        }
+      
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,10 +34,6 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInStaircase = true;
 
-            if (!playerController.gameController.isGameOver)
-            {
-                playerController.gameController.SetHelpMenuText("Press E to use Staircase!");
-            }
         }
 
         if (collision.gameObject.tag == "Elevator")
@@ -49,8 +41,7 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInElevator = true;
 
-                playerController.gameController.SetHelpMenuText("Press F to use Elevator!");
-                }
+        }
 
         //Player Enters Switch Trigger
         if (collision.gameObject.tag == "LightSwitch")
@@ -58,10 +49,6 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInLightswitch = true;
 
-            if (!playerController.gameController.isGameOver)
-            {
-                playerController.gameController.SetHelpMenuText("Press Q to use Light Switch!");
-            }
         }
 
         //Player Enters Fusebox Trigger
@@ -70,10 +57,6 @@ public class CollisionModule : MonoBehaviour
             //Set Bool Trigger to True
             playerController.isPlayerInFusebox = true;
 
-            if (!playerController.gameController.isGameOver)
-            {
-                playerController.gameController.SetHelpMenuText("Press Z to use Fusebox!");
-            }
         }
 
         //Player enters Generator Trigger
@@ -81,10 +64,6 @@ public class CollisionModule : MonoBehaviour
         {
             playerController.isPlayerInGenerator = true;
 
-            if (!playerController.gameController.isGameOver)
-            {
-                playerController.gameController.SetHelpMenuText("Press S to use Generator!");
-            }
         }
 
         if (collision.gameObject.tag == "Room")

@@ -18,8 +18,9 @@ public class InputModule : MonoBehaviour
 
     private void Update()
     {
+
         //Check If Key (E) is Pressed AND if Player is in a staircase Trigger.
-        if (Input.GetKeyDown(playerController.staircaseIntKey) && playerController.isPlayerInStaircase)
+        if (Input.GetKeyDown(playerController.interactionKey) && playerController.isPlayerInStaircase)
         {
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
             {
@@ -37,7 +38,7 @@ public class InputModule : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(playerController.elevatorIntKey) && playerController.isPlayerInElevator)
+        if (Input.GetKeyDown(playerController.interactionKey) && playerController.isPlayerInElevator)
         {
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
             {
@@ -55,7 +56,7 @@ public class InputModule : MonoBehaviour
         }
 
         //Player is Interacting with Light Switch 
-        if (Input.GetKeyDown(playerController.lightIntKey) && playerController.isPlayerInLightswitch && playerController.gameController.isFuseBlown == false)
+        if (Input.GetKeyDown(playerController.interactionKey) && playerController.isPlayerInLightswitch && playerController.gameController.isFuseBlown == false)
         {
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
             {
@@ -75,7 +76,7 @@ public class InputModule : MonoBehaviour
         }
 
         //Player is Interacting with Fusebox
-        if (Input.GetKeyDown(playerController.fixFuseKey) && playerController.isPlayerInFusebox)
+        if (Input.GetKeyDown(playerController.interactionKey) && playerController.isPlayerInFusebox)
         {
             //Loop through currentCollisions
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
@@ -93,7 +94,7 @@ public class InputModule : MonoBehaviour
         }
 
         //Player is Interacting with Generator Button
-        if (Input.GetKeyDown(playerController.genIntKey) && playerController.isPlayerInGenerator)
+        if (Input.GetKeyDown(playerController.interactionKey) && playerController.isPlayerInGenerator)
         {
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
             {

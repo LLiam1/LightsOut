@@ -22,11 +22,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
 
     //Key Controls
-    public KeyCode staircaseIntKey = KeyCode.E;
-    public KeyCode lightIntKey = KeyCode.Q;
-    public KeyCode fixFuseKey = KeyCode.Z;
-    public KeyCode elevatorIntKey = KeyCode.F;
-    public KeyCode genIntKey = KeyCode.S;
+    public KeyCode interactionKey = KeyCode.E;
+    //public KeyCode staircaseIntKey = KeyCode.E;
+    //public KeyCode lightIntKey = KeyCode.Q;
+    //public KeyCode fixFuseKey = KeyCode.Z;
+    //public KeyCode elevatorIntKey = KeyCode.F;
+    //public KeyCode genIntKey = KeyCode.S;
     public KeyCode fullLevelViewKey = KeyCode.Space;
 
     //Trigger Bools

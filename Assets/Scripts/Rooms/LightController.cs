@@ -102,8 +102,10 @@ public class LightController : MonoBehaviour
 
     public void CheckLightSwitch()
     {
+        int randLightPerc = Random.Range(0, 100);
+
         //Check if Fuse is Blown
-        if (lightActiveCount > MAX_LIGHTS_ACITVE && Random.Range(0, 100) < percLightTriggers)
+        if (lightActiveCount > MAX_LIGHTS_ACITVE && randLightPerc > percLightTriggers)
         {
 
             //Blown Fuse! Loop Through all Lights & Turn them Off

@@ -24,15 +24,6 @@ public class GameController : MonoBehaviour {
     //Bool Randomly Generate Rooms (ON/OFF)
     public bool randomlyGenerateRooms = true;
 
-    //Bool: Help Key Menu Activate
-    public bool isHelpButtonActive;
-
-    //Help Button Panel
-    public GameObject buttonHelpMenu;
-
-    //Help Button Text
-    public TMP_Text helpButtonText;
-
     //Parent Canvas
     public Transform uiParent;
 
@@ -66,13 +57,7 @@ public class GameController : MonoBehaviour {
 
         //Activate Help Menu
         if (isGameOver) {
-            if (isWinner)
-            {
-                SetHelpMenuText("You Escaped!");
-            }  else
-            {
-                SetHelpMenuText("Game Over!");
-            }
+            //TODO Display Win Screen
         }
 
         if(generatorActiveCount >= 3)
@@ -80,7 +65,6 @@ public class GameController : MonoBehaviour {
             isElevatorActive = true;
         }
 
-        buttonHelpMenu.SetActive(isHelpButtonActive);
     }
 
     //Play Spawn Function
@@ -94,8 +78,4 @@ public class GameController : MonoBehaviour {
         player.GetComponent<PlayerController>().SetCameraPosition(spawnRoom);
     }
 
-    public void SetHelpMenuText(string text)
-    {
-        helpButtonText.text = text;
-    }
 }

@@ -34,11 +34,23 @@ public class EnemyController : MonoBehaviour
 
     public float maxDist;
 
+    public int lightTurnOffPercent;
+
+
+    //Enum: Enemy Facing Direction
+    private enum EnemyDirection { Left, Right }
+
+    //EnemyDirection: Facing Dir
+    private EnemyDirection dir;
+
+
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         enemyState = EnemyState.Idle;
+
+        dir = EnemyDirection.Right;
     }
 
     private void Update()
@@ -102,6 +114,20 @@ public class EnemyController : MonoBehaviour
                 {
                     float step = 3 * Time.deltaTime;
 
+                    //Move Direction
+                    if (roomDest.transform.position.x < transform.position.x)
+                    {
+                        //Set Enemy Direction
+                        dir = EnemyDirection.Left;
+
+                    }
+                    else if (roomDest.transform.position.x > transform.position.x)
+                    {
+                        //Set Enemy Direction
+                        dir = EnemyDirection.Right;
+                    }
+
+
                     //Move to Target Position
                     transform.position = Vector2.MoveTowards(transform.position, roomDest.transform.position, step);
                 }
@@ -112,6 +138,22 @@ public class EnemyController : MonoBehaviour
 
                     enemyState = EnemyState.Idle;
                 }
+                break;
+        }
+
+
+        //Flip Sprite Based on move walk direction
+        switch (dir)
+        {
+            //Right
+            case EnemyDirection.Right:
+                //Facing Right
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                break;
+            //Left
+            case EnemyDirection.Left:
+                //Facing Left
+                transform.eulerAngles = new Vector3(0, 180, 0);
                 break;
         }
     }
@@ -133,6 +175,21 @@ public class EnemyController : MonoBehaviour
             //Check if Reached Target
             if (Vector3.Distance(transform.position, currentPath[0].CurrentPos()) > 0.001)
             {
+
+                //Move Direction
+                if (currentPath[0].transform.position.x < transform.position.x)
+                {
+                    //Set Enemy Direction
+                    dir = EnemyDirection.Left;
+
+                }
+                else if (currentPath[0].transform.position.x > transform.position.x)
+                {
+                    //Set Enemy Direction
+                    dir = EnemyDirection.Right;
+                }
+
+
                 float step = 5 * Time.deltaTime;
 
                 //Move to Target Position
@@ -198,6 +255,21 @@ public class EnemyController : MonoBehaviour
             {
                 float step = 5 * Time.deltaTime;
 
+
+                //Move Direction
+                if (currentPath[0].transform.position.x < transform.position.x)
+                {
+                    //Set Enemy Direction
+                    dir = EnemyDirection.Left;
+
+                }
+                else if (currentPath[0].transform.position.x > transform.position.x)
+                {
+                    //Set Enemy Direction
+                    dir = EnemyDirection.Right;
+                }
+
+
                 //Move to Target Position
                 transform.position = Vector2.MoveTowards(transform.position, currentPath[0].CurrentPos(), step);
 
@@ -235,26 +307,39 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Get Current Room
-        if(collision.gameObject.tag  == "Room")
+        if (collision.gameObject.tag == "Room")
         {
             currentRoom = collision.gameObject.GetComponent<RoomModule>();
         }
 
 
         //Enemy Found Player
-        if(collision.gameObject.tag == "Player" && currentRoom.isLightOn == false)
+        if (collision.gameObject.tag == "Player" && currentRoom.isLightOn == false)
         {
             //Attack Player
             enemyState = EnemyState.Attacking;
 
-        } 
+        }
 
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             //Attack Player
             Destroy(collision.gameObject);
-            
-        } 
+
+        }
+
+        if(collision.gameObject.tag == "LightSwitch")
+        {
+            //Random Number 0-100
+            int percent = Random.Range(0, 100);
+
+            //Check If Percent Will Turn Off light
+            if(percent < lightTurnOffPercent)
+            {
+                //Turn Off Light
+                collision.gameObject.GetComponent<LightModule>().isLightOn = false;
+            }
+        }
     }
 }
 
