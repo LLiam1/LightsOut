@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 56843641284960611, guid: fde5582e5d743d64da74554e4809c433, type: 3}
+  sound: {fileID: 0}
+  highlight: {fileID: 0}
   isGeneratorActive: 0
   currentPopup: {fileID: 0}
 --- !u!58 &3540979457023805848

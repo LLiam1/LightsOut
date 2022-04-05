@@ -266,11 +266,7 @@ MonoBehaviour:
   gameController: {fileID: 0}
   rb: {fileID: 3075010276503761828}
   moveSpeed: 12.5
-  staircaseIntKey: 101
-  lightIntKey: 113
-  fixFuseKey: 122
-  elevatorIntKey: 102
-  genIntKey: 115
+  interactionKey: 101
   fullLevelViewKey: 32
   isPlayerInStaircase: 0
   isPlayerInLightswitch: 0
@@ -298,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCollisions: []
+  highlight: {fileID: 1235763740921300200, guid: 406f762606be1834abbd1808f09b3f9c, type: 3}
 --- !u!114 &3075010276503761830
 MonoBehaviour:
   m_ObjectHideFlags: 0

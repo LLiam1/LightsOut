@@ -15,19 +15,26 @@ public class CollisionModule : MonoBehaviour
     //List Because the Player can be in multiple Collisions at once
     public List<GameObject> currentCollisions = new List<GameObject>();
 
+    public GameObject highlight;
+    private GameObject thisHighlight;
+
     private void Awake()
     {
         //Get the PController Component
         playerController = GetComponent<PlayerController>();
     }
 
-    private void Update()
+    private void Start()
     {
-      
+      thisHighlight = Instantiate(highlight);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        thisHighlight.transform.position = collision.transform.position;
+        thisHighlight.GetComponent<Light2D>().intensity = 3;
+        
+
         //Player Enters Staircase Trigger
         if (collision.gameObject.tag == "Staircase")
         {
@@ -85,6 +92,8 @@ public class CollisionModule : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        thisHighlight.GetComponent<Light2D>().intensity = 0;
+        
         //Player Exits Staircase Trigger
         if (collision.gameObject.tag == "Staircase")
         {

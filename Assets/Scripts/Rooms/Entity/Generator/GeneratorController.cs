@@ -9,6 +9,8 @@ public class GeneratorController : MonoBehaviour
 
     public AudioSource sound;
 
+    public GameObject highlight;
+
     //Generator Status
     public bool isGeneratorActive = false;
 
