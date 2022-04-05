@@ -1129,6 +1129,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3074345913813303601, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074345914101939497, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3957266539717239913, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
       propertyPath: m_Name
       value: Main-Canvas
@@ -1215,6 +1223,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3957266539717239917, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656086716534021488, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697510950402044871, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
