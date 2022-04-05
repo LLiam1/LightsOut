@@ -12,6 +12,24 @@ public class LightModule : MonoBehaviour
 
     public GameObject interactKeyDisplay;
 
+    private SpriteRenderer spriteRenderer;
+    private GameController gameController;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();   
+    }
+
+    private void Update()
+    {
+        if(isLightOn) {
+            spriteRenderer.sprite = gameController.onLightSwitch;
+        } else
+        {
+            spriteRenderer.sprite = gameController.offLightSwitch;
+        }
+    }
 
     //Set the Light Status Opposite when Interated with
     public void setLightState(bool _state)

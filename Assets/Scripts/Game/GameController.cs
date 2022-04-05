@@ -45,6 +45,9 @@ public class GameController : MonoBehaviour {
     //Enemy Spawn Room
     public RoomModule enemySpawnRoom;
 
+    public Sprite offLightSwitch;
+    public Sprite onLightSwitch;
+
     private void Start()
     {
         //Get Light Controller

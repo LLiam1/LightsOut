@@ -15,7 +15,7 @@ public class GeneratorScript : MonoBehaviour
          public float generatorCurrentVal;
          public float generatorCompleteVal; 
 
-         void OnEnable(){
+         void Start(){
                 generatorCurrentVal = 0;
 
          }
