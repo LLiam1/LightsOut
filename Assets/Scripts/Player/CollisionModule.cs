@@ -31,9 +31,14 @@ public class CollisionModule : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        thisHighlight.transform.position = collision.transform.position;
-        thisHighlight.GetComponent<Light2D>().intensity = 3;
-        
+        if (currentCollisions.Count >= 0 && collision.gameObject.tag != "Room")
+        {
+            if (thisHighlight != null)
+            {
+                thisHighlight.transform.position = collision.transform.position;
+                thisHighlight.GetComponent<Light2D>().intensity = 3;
+            }
+        }
 
         //Player Enters Staircase Trigger
         if (collision.gameObject.tag == "Staircase")
@@ -92,8 +97,12 @@ public class CollisionModule : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        thisHighlight.GetComponent<Light2D>().intensity = 0;
-        
+
+        if (currentCollisions.Count >= 0 && collision.gameObject.tag != "Room")
+        {
+            thisHighlight.GetComponent<Light2D>().intensity = 0;
+        }
+
         //Player Exits Staircase Trigger
         if (collision.gameObject.tag == "Staircase")
         {

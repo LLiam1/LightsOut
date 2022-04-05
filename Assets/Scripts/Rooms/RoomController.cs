@@ -161,13 +161,6 @@ public class RoomController : MonoBehaviour
 
         int rand = Random.Range(0, rooms.Count - 1);
 
-        Debug.Log(rand);
-
-        //Spawn Player
-        gameController.SpawnPlayer(rooms[rand].GetComponent<RoomModule>());
-
-        
-
         //Setup Light Switches
         gameController.lightController.SetupLights();
 

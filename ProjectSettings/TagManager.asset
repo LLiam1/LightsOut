@@ -15,6 +15,7 @@ TagManager:
   - Enemy
   - Elevator
   - UI Cam
+  - Highlight
   layers:
   - Default
   - TransparentFX

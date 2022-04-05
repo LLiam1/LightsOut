@@ -43,6 +43,9 @@ public class EnemyController : MonoBehaviour
     //EnemyDirection: Facing Dir
     private EnemyDirection dir;
 
+    //Enemy Move Speed
+    public float moveSpeed;
+
 
     public void Start()
     {
@@ -55,106 +58,111 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        if (currentRoom.isLightOn)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
-            enemyState = EnemyState.Fleeing;
-        }
-        if (Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) <= maxDist)
-        {
-            //Stop Chasing
-            enemyState = EnemyState.Chasing;
+            if (currentRoom.isLightOn)
+            {
+                enemyState = EnemyState.Fleeing;
+            }
+            if (Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) <= maxDist)
+            {
+                //Stop Chasing
+                enemyState = EnemyState.Chasing;
 
-        } else if(enemyState != EnemyState.Idle)
-        {
-            enemyState = EnemyState.Roaming;
-        } else
-        {
-            enemyState = EnemyState.Idle;
-        }
-       
-        switch (enemyState)
-        {
-            case EnemyState.Roaming:
-                Debug.Log("Roaming");
-                StartCoroutine(Roaming());
-                break;
-            case EnemyState.Chasing:
-                StartCoroutine(ChasePlayer());
-                break;
-            case EnemyState.Idle:
-                //Do Nothing for X Seconds
-                if(timer >= maxTime && currentRoom.isLightOn == false)
-                {
-                    enemyState = EnemyState.Roaming;
+            }
+            else if (enemyState != EnemyState.Idle)
+            {
+                enemyState = EnemyState.Roaming;
+            }
+            else
+            {
+                enemyState = EnemyState.Idle;
+            }
 
-                    timer = 0;
-                } else
-                {
-                    //Add 1 To Timer
-                    timer = timer + 1 * Time.deltaTime;
-                }
-                break;
-            case EnemyState.Attacking:
-                //Attack Player
-                Debug.Log("Player Attacked! Game Over");
-                break;
-
-            case EnemyState.Fleeing:
-                //Random Neighbor Room to Flee to
-                RoomModule roomDest = currentRoom.theseNeighbors[0];
-
-                //Clear Path
-                currentPath.Clear();
-
-                //Set Reached Destination to False
-                reachedlocation = false;
-
-                //Check if Reached Target
-                if (Vector3.Distance(transform.position, roomDest.transform.position) > 0.001)
-                {
-                    float step = 3 * Time.deltaTime;
-
-                    //Move Direction
-                    if (roomDest.transform.position.x < transform.position.x)
+            switch (enemyState)
+            {
+                case EnemyState.Roaming:
+                    Debug.Log("Roaming");
+                    StartCoroutine(Roaming());
+                    break;
+                case EnemyState.Chasing:
+                    StartCoroutine(ChasePlayer());
+                    break;
+                case EnemyState.Idle:
+                    //Do Nothing for X Seconds
+                    if (timer >= maxTime && currentRoom.isLightOn == false)
                     {
-                        //Set Enemy Direction
-                        dir = EnemyDirection.Left;
+                        enemyState = EnemyState.Roaming;
 
+                        timer = 0;
                     }
-                    else if (roomDest.transform.position.x > transform.position.x)
+                    else
                     {
-                        //Set Enemy Direction
-                        dir = EnemyDirection.Right;
+                        //Add 1 To Timer
+                        timer = timer + 1 * Time.deltaTime;
                     }
+                    break;
+                case EnemyState.Attacking:
+                    //Attack Player
+                    Debug.Log("Player Attacked! Game Over");
+                    break;
+
+                case EnemyState.Fleeing:
+                    //Random Neighbor Room to Flee to
+                    RoomModule roomDest = currentRoom.theseNeighbors[0];
+
+                    //Clear Path
+                    currentPath.Clear();
+
+                    //Set Reached Destination to False
+                    reachedlocation = false;
+
+                    //Check if Reached Target
+                    if (Vector3.Distance(transform.position, roomDest.transform.position) > 0.001)
+                    {
+
+                        //Move Direction
+                        if (roomDest.transform.position.x < transform.position.x)
+                        {
+                            //Set Enemy Direction
+                            dir = EnemyDirection.Left;
+
+                        }
+                        else if (roomDest.transform.position.x > transform.position.x)
+                        {
+                            //Set Enemy Direction
+                            dir = EnemyDirection.Right;
+                        }
 
 
-                    //Move to Target Position
-                    transform.position = Vector2.MoveTowards(transform.position, roomDest.transform.position, step);
-                }
-                else
-                {
-                    //Position Reached
-                    reachedlocation = true;
+                        //Move to Target Position
+                        transform.position = Vector2.MoveTowards(transform.position, roomDest.transform.position, moveSpeed * Time.deltaTime);
+                    }
+                    else
+                    {
+                        //Position Reached
+                        reachedlocation = true;
 
-                    enemyState = EnemyState.Idle;
-                }
-                break;
-        }
+                        enemyState = EnemyState.Idle;
+                    }
+                    break;
+            }
 
 
-        //Flip Sprite Based on move walk direction
-        switch (dir)
-        {
-            //Right
-            case EnemyDirection.Right:
-                //Facing Right
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                break;
-            //Left
-            case EnemyDirection.Left:
-                //Facing Left
-                transform.eulerAngles = new Vector3(0, 180, 0);
-                break;
+            //Flip Sprite Based on move walk direction
+            switch (dir)
+            {
+                //Right
+                case EnemyDirection.Right:
+                    //Facing Right
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    break;
+                //Left
+                case EnemyDirection.Left:
+                    //Facing Left
+                    transform.eulerAngles = new Vector3(0, 180, 0);
+                    break;
+            }
         }
     }
 
@@ -189,11 +197,8 @@ public class EnemyController : MonoBehaviour
                     dir = EnemyDirection.Right;
                 }
 
-
-                float step = 5 * Time.deltaTime;
-
                 //Move to Target Position
-                transform.position = Vector2.MoveTowards(transform.position, currentPath[0].CurrentPos(), step);
+                transform.position = Vector2.MoveTowards(transform.position, currentPath[0].CurrentPos(), moveSpeed * Time.deltaTime);
 
                 //Position Not Reached
                 reachedlocation = false;
@@ -253,9 +258,6 @@ public class EnemyController : MonoBehaviour
             //Check if Reached Target
             if (Vector3.Distance(transform.position, currentPath[0].CurrentPos()) > 0.001)
             {
-                float step = 5 * Time.deltaTime;
-
-
                 //Move Direction
                 if (currentPath[0].transform.position.x < transform.position.x)
                 {
@@ -271,7 +273,7 @@ public class EnemyController : MonoBehaviour
 
 
                 //Move to Target Position
-                transform.position = Vector2.MoveTowards(transform.position, currentPath[0].CurrentPos(), step);
+                transform.position = Vector2.MoveTowards(transform.position, currentPath[0].CurrentPos(), moveSpeed * Time.deltaTime);
 
                 //Can't Go Light is ON
                 if (currentPath[0].isLightOn)

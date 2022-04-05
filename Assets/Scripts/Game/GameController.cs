@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour {
     //Player Prefab
     public GameObject playerPrefab;
 
+    //Enemy Prefab
+    public GameObject enemyPrefab;
+
     //Light Controller
     public LightController lightController;
 
@@ -36,6 +39,12 @@ public class GameController : MonoBehaviour {
     //Bool: Tracks if Player Won
     public bool isWinner = false;
 
+    //Player Spawn Room
+    public RoomModule playerSpawnRoom;
+
+    //Enemy Spawn Room
+    public RoomModule enemySpawnRoom;
+
     private void Start()
     {
         //Get Light Controller
@@ -50,6 +59,12 @@ public class GameController : MonoBehaviour {
             //Setup Rooms
             roomController.SetupRooms();
         }
+
+        //Spawn Player
+        SpawnPlayer(playerSpawnRoom);
+
+        //Enemy Spawn
+        SpawnEnemy();
     }
 
     private void Update()
@@ -78,4 +93,13 @@ public class GameController : MonoBehaviour {
         player.GetComponent<PlayerController>().SetCameraPosition(spawnRoom);
     }
 
+    private void SpawnEnemy()
+    {
+        //Spawn Room 
+        Vector3 spawnPos = enemySpawnRoom.transform.position;
+
+        spawnPos.y += 5.1f;
+
+        GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+    }
 }
