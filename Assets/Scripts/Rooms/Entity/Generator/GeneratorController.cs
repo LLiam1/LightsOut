@@ -29,12 +29,24 @@ public class GeneratorController : MonoBehaviour
         
     }
 
+
+    public void DisplayWindow()
+    {
+        if (currentPopup.activeSelf)
+        {
+            currentPopup.SetActive(false);
+        } else
+        {
+            currentPopup.SetActive(true);
+        }
+    }
+
     //Just for presentation until we can figure this out.
     public void ScoreOverRide(){
         if(isGeneratorActive == false){
-        gameController.generatorActiveCount++;
-        isGeneratorActive = true;
-        sound.Play();
+            gameController.generatorActiveCount++;
+            isGeneratorActive = true;
+            sound.Play();
         }
         else{
            return;

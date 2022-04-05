@@ -101,18 +101,7 @@ public class InputModule : MonoBehaviour
                 //Check if Gameobject is a Staircase
                 if (playerController.collisionModule.currentCollisions[i].tag == "Generator")
                 {
-                    playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().ScoreOverRide();
-                    // //Check if Popup exists
-                    // if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().currentPopup == null)
-                    // {
-
-
-                    //     if (playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().isGeneratorActive == false)
-                    //     {
-                    //         //Display Window
-                    //         playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayPopupWindow();
-                    //     }
-                    // }
+                    playerController.collisionModule.currentCollisions[i].GetComponent<GeneratorController>().DisplayWindow();
                 }
             }
         }

@@ -22,7 +22,7 @@ public class GeneratorScript : MonoBehaviour
          void Update ()
          {
              //All to make it rotate...
-                 if (Input.GetMouseButtonDown (0)) {
+                 if (Input.GetMouseButtonDown(0)) {
                          deltaRotation = 0f;
                          previousRotation = angleBetweenPoints (transform.position, Camera.main.ScreenToWorldPoint (Input.mousePosition));
                  } else if (Input.GetMouseButton (0)) {

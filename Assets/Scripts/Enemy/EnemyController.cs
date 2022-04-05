@@ -147,6 +147,7 @@ public class EnemyController : MonoBehaviour
                     }
                     break;
             }
+        }
 
 
             //Flip Sprite Based on move walk direction
@@ -163,7 +164,6 @@ public class EnemyController : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     break;
             }
-        }
     }
 
     IEnumerator ChasePlayer()
