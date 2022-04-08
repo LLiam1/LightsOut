@@ -54,6 +54,8 @@ public class EnemyController : MonoBehaviour
         enemyState = EnemyState.Idle;
 
         dir = EnemyDirection.Right;
+
+        roomController = GameObject.FindGameObjectWithTag("RoomController").GetComponent<RoomController>();
     }
 
     private void Update()
