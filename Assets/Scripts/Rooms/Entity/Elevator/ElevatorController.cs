@@ -50,4 +50,10 @@ public class ElevatorController : MonoBehaviour
         //     Debug.Log("You Escaped the Level!");
         // }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        elevatorObject.GetComponent<ElevatorScript>().enabled = false;
+        elevatorObject.SetActive(false);
+    }
 }
