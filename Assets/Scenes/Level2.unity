@@ -337,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7571207830948708506, guid: 58b13865cd7fa4f66b50822db1611200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7571207830948708506, guid: 58b13865cd7fa4f66b50822db1611200, type: 3}
       propertyPath: m_LocalPosition.y
@@ -648,6 +648,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511564741}
     m_Modifications:
+    - target: {fileID: 5851632651965065237, guid: 462890e384c3c4592916f9ba283ed5ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7830371384995475296, guid: 462890e384c3c4592916f9ba283ed5ae, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -902,6 +906,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1511564741}
     m_Modifications:
+    - target: {fileID: 4081894402103410345, guid: 7af410a23c1cb4204b0f4bdb65757099, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7038296767992854182, guid: 7af410a23c1cb4204b0f4bdb65757099, type: 3}
       propertyPath: m_Name
       value: Room[B][R] (1)
@@ -1504,7 +1512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7571207830948708506, guid: 58b13865cd7fa4f66b50822db1611200, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7571207830948708506, guid: 58b13865cd7fa4f66b50822db1611200, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1696,9 +1704,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1380964154}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
+      propertyPath: onLightSwitch
+      value: 
+      objectReference: {fileID: 21300000, guid: 0c65fdb79538e8448893f17418756e46, type: 3}
+    - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: enemySpawnRoom
       value: 
       objectReference: {fileID: 197283606}
+    - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
+      propertyPath: offLightSwitch
+      value: 
+      objectReference: {fileID: 21300000, guid: c3d24b3f4325d684daac8a950f8e103c, type: 3}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: lightController
       value: 
