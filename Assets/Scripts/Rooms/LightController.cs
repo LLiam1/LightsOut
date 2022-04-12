@@ -39,6 +39,8 @@ public class LightController : MonoBehaviour
     //Percentage Change the light goes out
     private int percLightTriggers = 25;
 
+    public bool isTutorialLevel = false;
+
     private void Start()
     {
         //Get Game Controller
@@ -111,6 +113,7 @@ public class LightController : MonoBehaviour
             //Blown Fuse! Loop Through all Lights & Turn them Off
             for (int i = 0; i <= currentLightSwitches.Count - 1; i++)
             {
+
                 //Turn all Lights Off
                 currentLightSwitches[i].GetComponent<LightModule>().setLightState(false);
             }

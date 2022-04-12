@@ -37,7 +37,9 @@ public class EnemyManager : MonoBehaviour
 
     //Bool: Check if Location Reached
     private bool reachedlocation;
-    private bool fleeLocationReached;
+    public bool fleeLocationSet = false;
+
+   
 
     public float timer = 0;
     public float maxTime;
@@ -133,7 +135,7 @@ public class EnemyManager : MonoBehaviour
                 break;
             case EnemyState.Idle:
                 if(timer >= maxTime && currentRoom.isLightOn == false)
-                    {
+                {
                     enemyState = EnemyState.Roaming;
 
                     timer = 0;
@@ -154,14 +156,17 @@ public class EnemyManager : MonoBehaviour
 
     public void RandomRoam()
     {
-        if (reachedlocation)
+        if (!fleeLocationSet)
         {
             //Generate Random Room
             moveRoom = roomController.rooms[Random.Range(0, roomController.rooms.Count - 1)].GetComponent<RoomModule>();
 
-            //PathfIND TO ROOM
+            fleeLocationSet = true;
             PathFind(moveRoom);
-        } 
+        } else
+        {
+                PathFind(moveRoom);
+        }
     }
 
     public void ChasePlayer()
@@ -173,7 +178,6 @@ public class EnemyManager : MonoBehaviour
     public void AttackPlayer()
     {
         //TODO Play Attack Animation and Jump at Player!
-
     }
 
     public void PathFind(RoomModule eRoom)
@@ -230,6 +234,12 @@ public class EnemyManager : MonoBehaviour
         {
             //Position Reached
             reachedlocation = true;
+
+            if(enemyState == EnemyState.Roaming)
+            {
+                fleeLocationSet = false;
+                enemyState = EnemyState.Idle;
+            }
         }
     }
 

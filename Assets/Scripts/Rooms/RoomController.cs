@@ -75,6 +75,8 @@ public class RoomController : MonoBehaviour
 
     public GameObject[,] levelRooms;
 
+    public bool isTutorialLevel;
+
     public void Start()
     {
         if (gameController.randomlyGenerateRooms)

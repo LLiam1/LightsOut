@@ -101,7 +101,7 @@ public class GameController : MonoBehaviour {
         //Spawn Room 
         Vector3 spawnPos = enemySpawnRoom.transform.position;
 
-        spawnPos.y += 5.1f;
+        spawnPos.y += 5.15f;
 
         GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
     }
