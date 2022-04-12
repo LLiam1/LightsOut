@@ -25,6 +25,7 @@ public class GeneratorScript : MonoBehaviour
                  if (Input.GetMouseButtonDown(0)) {
                          deltaRotation = 0f;
                          previousRotation = angleBetweenPoints (transform.position, Camera.main.ScreenToWorldPoint (Input.mousePosition));
+                         Debug.Log("Clicked");
                  } else if (Input.GetMouseButton (0)) {
                          currentRotation = angleBetweenPoints (transform.position, Camera.main.ScreenToWorldPoint (Input.mousePosition));
                          deltaRotation = Mathf.DeltaAngle (currentRotation, previousRotation);
