@@ -24,15 +24,15 @@ public class GeneratorScript : MonoBehaviour
              //All to make it rotate...
                  if (Input.GetMouseButtonDown(0)) {
                          deltaRotation = 0f;
-                         previousRotation = angleBetweenPoints (transform.position, Camera.main.ScreenToWorldPoint (Input.mousePosition));
-                         Debug.Log("Clicked");
+                         previousRotation = angleBetweenPoints (transform.position, Camera.main.ScreenToWorldPoint(Input.mousePosition));
                  } else if (Input.GetMouseButton (0)) {
                          currentRotation = angleBetweenPoints (transform.position, Camera.main.ScreenToWorldPoint (Input.mousePosition));
                          deltaRotation = Mathf.DeltaAngle (currentRotation, previousRotation);
                          if (Mathf.Abs (deltaRotation) > deltaLimit) {
                                  deltaRotation = deltaLimit * Mathf.Sign (deltaRotation);
                          }
-                         previousRotation = currentRotation;
+
+                        previousRotation = currentRotation;
                          transform.Rotate (Vector3.back * Time.deltaTime, deltaRotation);
                  } else {
                          transform.Rotate (Vector3.back * Time.deltaTime, deltaRotation);
