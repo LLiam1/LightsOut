@@ -16,6 +16,7 @@ TagManager:
   - Elevator
   - UI Cam
   - Highlight
+  - FadeImage
   layers:
   - Default
   - TransparentFX

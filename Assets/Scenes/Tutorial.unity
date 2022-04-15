@@ -624,6 +624,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2290014211422399542, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3074345913813303601, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -761,13 +765,13 @@ RectTransform:
   m_LocalScale: {x: 0.9348581, y: 0.90106803, z: 0.90106803}
   m_Children: []
   m_Father: {fileID: 961161005}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -94, y: 148}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -100}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &472967526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,11 +1191,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f72b39aeebd241a1ba11e73df4ad46d, type: 3}
---- !u!1 &1471267825 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8697510950402044871, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
-  m_PrefabInstance: {fileID: 439559474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1669451776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1258,7 +1257,7 @@ PrefabInstance:
     - target: {fileID: 6160583148503692093, guid: df44479ce60734734a2cc40e146f14e1, type: 3}
       propertyPath: currentPopup
       value: 
-      objectReference: {fileID: 1471267825}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df44479ce60734734a2cc40e146f14e1, type: 3}
 --- !u!1001 &1851818626
@@ -1272,6 +1271,14 @@ PrefabInstance:
       propertyPath: uiParent
       value: 
       objectReference: {fileID: 961161005}
+    - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
+      propertyPath: fadeSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
+      propertyPath: isEnemyActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: onLightSwitch
       value: 

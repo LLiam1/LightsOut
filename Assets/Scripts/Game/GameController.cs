@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour { 
 
@@ -48,6 +49,15 @@ public class GameController : MonoBehaviour {
     public Sprite offLightSwitch;
     public Sprite onLightSwitch;
 
+    public bool isEnemyActive = true;
+
+    // the image you want to fade, assign in inspector
+    public Image img;
+
+    private GameObject fadeOBJ;
+
+    public float fadeSpeed;
+
     private void Start()
     {
         //Get Light Controller
@@ -66,8 +76,18 @@ public class GameController : MonoBehaviour {
         //Spawn Player
         SpawnPlayer(playerSpawnRoom);
 
-        //Enemy Spawn
-        SpawnEnemy();
+
+        if (isEnemyActive)
+        {
+            //Enemy Spawn
+            SpawnEnemy();
+        }
+
+        fadeOBJ = GameObject.FindGameObjectWithTag("FadeImage");
+
+        img = GameObject.FindGameObjectWithTag("FadeImage").GetComponent<Image>();
+
+        StartCoroutine(FadeImage(true));
     }
 
     private void Update()
@@ -81,6 +101,11 @@ public class GameController : MonoBehaviour {
         if(generatorActiveCount >= 3)
         {
             isElevatorActive = true;
+        }
+
+        if (isWinner)
+        {
+            StartCoroutine(FadeImage(true));
         }
 
     }
@@ -105,4 +130,33 @@ public class GameController : MonoBehaviour {
 
         GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
     }
+
+    IEnumerator FadeImage(bool fadeAway)
+    {
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = 1; i >= 0; i -= Time.deltaTime * fadeSpeed)
+            {
+                // set color with i as alpha
+                img.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+        // fade from transparent to opaque
+        else
+        {
+            // loop over 1 second
+            for (float i = 0; i <= 1; i += Time.deltaTime * fadeSpeed)
+            {
+                // set color with i as alpha
+                img.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+
+        fadeOBJ.SetActive(false);
+    }
 }
+

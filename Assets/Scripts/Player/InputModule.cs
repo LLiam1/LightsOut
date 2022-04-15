@@ -18,6 +18,7 @@ public class InputModule : MonoBehaviour
     {
         //Get the Player Controller Component
         playerController = GetComponent<PlayerController>();
+
         if(SceneManager.GetActiveScene().name == "Tutorial"){
             isTutorial = true;
             Text text = FindObjectOfType<Text>();
@@ -28,6 +29,8 @@ public class InputModule : MonoBehaviour
         else{
             isTutorial = false;
             tutorialText = null;
+            Destroy(tutorialText);
+
             return;
         }
 
@@ -176,29 +179,41 @@ public class InputModule : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.tag == "Staircase"){
-        tutorialText.text = "Press E to Go Up Or Down a Staircase.";
-        }
 
-        if(col.gameObject.tag == "Elevator"){
-        tutorialText.text = "Press E to Use The Elevator Once All 3 Generators Are Powered.";
-        }
+        if (isTutorial)
+        {
+            if (col.gameObject.tag == "Staircase")
+            {
+                tutorialText.text = "Press E to Go Up Or Down a Staircase.";
+            }
 
-        if(col.gameObject.tag == "Generator"){
-        tutorialText.text = "Press E to Fix the Generator to Power the Elevator.";
-        }
+            if (col.gameObject.tag == "Elevator")
+            {
+                tutorialText.text = "Press E to Use The Elevator Once All 3 Generators Are Powered.";
+            }
 
-        if(col.gameObject.tag == "LightSwitch"){
-        tutorialText.text = "Press E to Turn On A Light. If Too Many Lights Are On, The Fuse Will Blow.";
-        }
+            if (col.gameObject.tag == "Generator")
+            {
+                tutorialText.text = "Press E to Fix the Generator to Power the Elevator.";
+            }
 
-        if(col.gameObject.tag == "Fusebox"){
-        tutorialText.text = "If the Fuse Is Blown, No Lights Will Turn On. Press E to Fix the Fusebox if the Fuse is Blown.";
-        }
+            if (col.gameObject.tag == "LightSwitch")
+            {
+                tutorialText.text = "Press E to Turn On A Light. If Too Many Lights Are On, The Fuse Will Blow.";
+            }
 
+            if (col.gameObject.tag == "Fusebox")
+            {
+                tutorialText.text = "If the Fuse Is Blown, No Lights Will Turn On. Press E to Fix the Fusebox if the Fuse is Blown.";
+            }
+        }
     }
 
-    void OnTriggerExit2D(Collider2D col){
-        tutorialText.text = "Press Space to View the Whole Level. Find the Generators and Power the Elevator to Escape.";
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (isTutorial)
+        {
+            tutorialText.text = "Press Space to View the Whole Level. Find the Generators and Power the Elevator to Escape.";
+        }
     }
 }
