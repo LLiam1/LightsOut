@@ -32,7 +32,10 @@ public class RoomModule : MonoBehaviour
 
     private void Start()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, 10);
+
+        int layer_mask = LayerMask.GetMask("Rooms");
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 10000, layer_mask);
 
         // If it hits something...
         if (hit.collider != null)
@@ -42,8 +45,6 @@ public class RoomModule : MonoBehaviour
                 theseNeighbors.Add(hit.collider.gameObject.GetComponent<RoomModule>());
             }
         }
-
-       
     }
 
     private void Update()
@@ -58,7 +59,6 @@ public class RoomModule : MonoBehaviour
         }
 
     }
-
     //Use this Func to get Status of Current Room Light
     public bool getStatusCurrentLight()
     {

@@ -750,7 +750,7 @@ GameObject:
   - component: {fileID: 2351571493517440795}
   - component: {fileID: 2351571493517440792}
   - component: {fileID: 5726699430957550775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Room[L][R]
   m_TagString: Room
   m_Icon: {fileID: 0}
