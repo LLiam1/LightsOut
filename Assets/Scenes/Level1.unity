@@ -1143,6 +1143,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4754511311640589973, guid: 54ee5825d95ae46f7b516b13725f37f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54ee5825d95ae46f7b516b13725f37f4, type: 3}
 --- !u!4 &476924283 stripped
@@ -1445,7 +1449,7 @@ PrefabInstance:
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: onLightSwitch
       value: 
-      objectReference: {fileID: 21300000, guid: 4bbc3896cf391c94aa39141f6d0d5728, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d4fa99d1f3405d419be6de1cff653b9, type: 3}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: enemySpawnRoom
       value: 
@@ -1453,7 +1457,7 @@ PrefabInstance:
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: offLightSwitch
       value: 
-      objectReference: {fileID: 21300000, guid: 1d4fa99d1f3405d419be6de1cff653b9, type: 3}
+      objectReference: {fileID: 21300000, guid: 4bbc3896cf391c94aa39141f6d0d5728, type: 3}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: lightController
       value: 
@@ -3285,11 +3289,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1295006992304164323, guid: 049ef2f95f8639e43b8c19a21708cc59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.78448486
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1295006992304164323, guid: 049ef2f95f8639e43b8c19a21708cc59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1000004
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1295006992304164323, guid: 049ef2f95f8639e43b8c19a21708cc59, type: 3}
       propertyPath: m_LocalPosition.z

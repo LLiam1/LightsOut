@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerInGenerator;
     public bool isPlayerInElevator;
 
+    public AudioSource walkSound;
+
     //Bool: Checks Player Walking
     public bool isPlayerWalking;
 
@@ -103,11 +105,22 @@ public class PlayerController : MonoBehaviour
             {
                 //Player is Walking
                 isPlayerWalking = true;
+                if(!walkSound.isPlaying){
+                    walkSound.Play();
+                    
+
+                }
+                else{
+                    walkSound.Pause();
+                }
+
+                
             }
             else
             {
                 //Playerr is Not Walking
                 isPlayerWalking = false;
+                walkSound.Stop();
             }
         }
 
