@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -38,8 +39,6 @@ public class EnemyManager : MonoBehaviour
     //Bool: Check if Location Reached
     private bool reachedlocation;
     public bool fleeLocationSet = false;
-
-   
 
     public float timer = 0;
     public float maxTime;
@@ -249,6 +248,11 @@ public class EnemyManager : MonoBehaviour
         if (collision.gameObject.tag == "Room")
         {
             currentRoom = collision.gameObject.GetComponent<RoomModule>();
+        }
+
+        if(collision.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("JumpScare");
         }
     }
 

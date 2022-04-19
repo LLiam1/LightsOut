@@ -27,7 +27,6 @@ public class GeneratorController : MonoBehaviour
 
     public void Update()
     {
-
         isGeneratorActive = popupScript.GetComponent<GeneratorScript>().isTaskCompleted;
 
         if (!GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isPlayerInGenerator)

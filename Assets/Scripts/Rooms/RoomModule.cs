@@ -107,7 +107,7 @@ public class RoomModule : MonoBehaviour
     public Vector3 CurrentPos()
     {
 
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y  + 3.05f, 0);
+        Vector3 pos = new Vector3(transform.position.x, transform.position.y  + 4.85f, 0);
 
         return pos;
     }

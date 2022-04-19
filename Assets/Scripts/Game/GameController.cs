@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using TMPro;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour { 
 
     //Player Prefab
@@ -88,6 +88,12 @@ public class GameController : MonoBehaviour {
         img = GameObject.FindGameObjectWithTag("FadeImage").GetComponent<Image>();
 
         StartCoroutine(FadeImage(true));
+
+        Scene scene = SceneManager.GetActiveScene();
+
+        //Current Scene
+        PlayerPrefs.SetString("LastScene", scene.name);
+
     }
 
     private void Update()
@@ -126,7 +132,7 @@ public class GameController : MonoBehaviour {
         //Spawn Room 
         Vector3 spawnPos = enemySpawnRoom.transform.position;
 
-        spawnPos.y += 5.15f;
+        spawnPos.y += 5.10f;
 
         GameObject enemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
     }

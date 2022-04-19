@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: d56ae7db8dcd6494381245ee9a0b4b4b
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: c6c389cc71653ca4eb9d13592544968a
+  - enabled: 1
+    path: Assets/Scenes/JumpScare.unity
+    guid: 7e06c81c80871461c87873cf255f36c1
+  - enabled: 1
+    path: Assets/Scenes/Main-Menu.unity
+    guid: b0ca12be276df435c94f53bf4748889d
   m_configObjects: {}
