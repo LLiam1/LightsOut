@@ -30,6 +30,11 @@ public class GeneratorController : MonoBehaviour
 
         isGeneratorActive = popupScript.GetComponent<GeneratorScript>().isTaskCompleted;
 
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isPlayerInGenerator)
+        {
+            currentPopup.SetActive(false);
+        }
+
     }
 
 

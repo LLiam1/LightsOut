@@ -20,6 +20,14 @@ public class ElevatorController : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if (!GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isPlayerInElevator)
+        {
+            elevatorObject.SetActive(false);
+        }
+    }
+
     // Update is called once per frame
     public void UseElevator()
     {

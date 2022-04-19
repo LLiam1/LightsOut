@@ -15,9 +15,11 @@ public class FuseBoxScript : MonoBehaviour
     public Sprite toggleUp;
     public Sprite toggleDown;
 
-    public GameController fuse; 
+    private GameController gameController; 
     
     void Start(){
+
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         currentVal = 0;
     }
     public void OnEnable(){
@@ -52,8 +54,7 @@ public class FuseBoxScript : MonoBehaviour
         //sDebug.Log("Target Val: " + targetVal + " | CurrentVal: " + currentVal);
 
         if(targetVal == currentVal){
-            fuse.isFuseBlown = false;
-            this.enabled = false;
+            gameController.isFuseBlown = false;
         }
     }
 }

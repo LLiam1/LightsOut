@@ -17,22 +17,14 @@ public class FuseboxController : MonoBehaviour
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
 
+
     //Fix Fuse Function
     public void FixFusebox()
     {
-        
         if (gameController.isFuseBlown)
         {
-            if (isFuseOpen)
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isPlayerInFusebox)
             {
-                //If Open close it
-                fuseBoxTaskUI.GetComponent<FuseBoxScript>().enabled = false;
-                fuseBoxTaskUI.SetActive(true);
-            }
-            else
-            {
-                //Spawn Task Window
-                fuseBoxTaskUI.GetComponent<FuseBoxScript>().enabled = true;
                 fuseBoxTaskUI.SetActive(true);
             }
         }
@@ -40,7 +32,7 @@ public class FuseboxController : MonoBehaviour
 
     private void Update()
     {
-        if(!gameController.isFuseBlown)
+        if (!gameController.isFuseBlown || !GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().isPlayerInFusebox)
         {
             fuseBoxTaskUI.SetActive(false);
         }

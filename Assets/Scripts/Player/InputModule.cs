@@ -65,10 +65,12 @@ public class InputModule : MonoBehaviour
                 //Check if Gameobject is an Elevator
                 if (playerController.collisionModule.currentCollisions[i].tag == "Elevator")
                 {
+                    if (GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().isElevatorActive)
+                    {
+                        //This will use the elevator through the Elevator Controller
+                        playerController.collisionModule.currentCollisions[i].gameObject.GetComponent<ElevatorController>().UseElevator();
 
-                    //This will use the elevator through the Elevator Controller
-                    playerController.collisionModule.currentCollisions[i].gameObject.GetComponent<ElevatorController>().UseElevator();
-
+                    }
                     //Break out of Loops (Found what we needed)
                     break;
                 }
@@ -111,6 +113,7 @@ public class InputModule : MonoBehaviour
                     break;
                 }
             }
+
         }
 
         //Player is Interacting with Generator Button
