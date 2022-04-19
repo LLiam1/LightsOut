@@ -53,5 +53,6 @@ public class ElevatorScript : MonoBehaviour
            randomStop = Random.Range(-15, timeUntilArrival);
         }
 
+        Debug.Log("test");
     }
 }

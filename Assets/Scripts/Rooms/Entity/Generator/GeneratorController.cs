@@ -16,6 +16,7 @@ public class GeneratorController : MonoBehaviour
 
     //Current Popup
     public GameObject currentPopup;
+    public GameObject popupScript;
 
     private GameController gameController;
 
@@ -26,18 +27,27 @@ public class GeneratorController : MonoBehaviour
 
     public void Update()
     {
-        
+
+        isGeneratorActive = popupScript.GetComponent<GeneratorScript>().isTaskCompleted;
+
     }
 
 
     public void DisplayWindow()
     {
-        if (currentPopup.activeSelf)
+        if (!isGeneratorActive)
         {
-            currentPopup.SetActive(false);
-        } else
-        {
-            currentPopup.SetActive(true);
+            if (!popupScript.GetComponent<GeneratorScript>().isTaskCompleted)
+            {
+                if (currentPopup.activeSelf)
+                {
+                    currentPopup.SetActive(false);
+                }
+                else
+                {
+                    currentPopup.SetActive(true);
+                }
+            }
         }
     }
 

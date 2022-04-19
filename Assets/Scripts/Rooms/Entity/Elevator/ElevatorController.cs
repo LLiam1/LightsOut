@@ -35,6 +35,7 @@ public class ElevatorController : MonoBehaviour
 
             Debug.Log("You Escaped the Level!");
        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
