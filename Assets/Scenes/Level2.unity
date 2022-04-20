@@ -1395,8 +1395,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fusebox 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7427736808076452432, guid: abe5c60cd233449cca7b8c398ecd32f1, type: 3}
+      propertyPath: fuseBoxTaskUI
+      value: 
+      objectReference: {fileID: 1894782922}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe5c60cd233449cca7b8c398ecd32f1, type: 3}
+--- !u!1 &1195190201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7427736806811799933, guid: abe5c60cd233449cca7b8c398ecd32f1, type: 3}
+  m_PrefabInstance: {fileID: 1195190200}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1243848244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2376,6 +2385,10 @@ PrefabInstance:
       value: RoomController
       objectReference: {fileID: 0}
     - target: {fileID: 4281697856169600094, guid: 6f72b39aeebd241a1ba11e73df4ad46d, type: 3}
+      propertyPath: fuseboxPrefab
+      value: 
+      objectReference: {fileID: 1195190201}
+    - target: {fileID: 4281697856169600094, guid: 6f72b39aeebd241a1ba11e73df4ad46d, type: 3}
       propertyPath: gameController
       value: 
       objectReference: {fileID: 134560655}
@@ -2653,6 +2666,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54b35584de574239bb51c8b20f2973d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1894782922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7875755650845247524, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+  m_PrefabInstance: {fileID: 1380964153}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1913465645
 PrefabInstance:
   m_ObjectHideFlags: 0

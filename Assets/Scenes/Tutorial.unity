@@ -645,6 +645,10 @@ PrefabInstance:
       propertyPath: speed
       value: 125
       objectReference: {fileID: 0}
+    - target: {fileID: 809893511282799466, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1420339821424471995, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
       propertyPath: speed
       value: 125
@@ -845,14 +849,14 @@ RectTransform:
   m_GameObject: {fileID: 472967524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9348581, y: 0.90106803, z: 0.90106803}
+  m_LocalScale: {x: 2.1307757, y: 2.0537598, z: 2.0537598}
   m_Children: []
   m_Father: {fileID: 961161005}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -100}
+  m_AnchoredPosition: {x: 12, y: -13}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &472967526
@@ -881,12 +885,12 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 11
+    m_MaxSize: 44
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Welcome to Lights Out!
 --- !u!222 &472967527

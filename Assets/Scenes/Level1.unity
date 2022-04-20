@@ -1457,7 +1457,7 @@ PrefabInstance:
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: onLightSwitch
       value: 
-      objectReference: {fileID: 21300000, guid: 1d4fa99d1f3405d419be6de1cff653b9, type: 3}
+      objectReference: {fileID: 21300000, guid: 4bbc3896cf391c94aa39141f6d0d5728, type: 3}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: enemySpawnRoom
       value: 
@@ -1465,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: offLightSwitch
       value: 
-      objectReference: {fileID: 21300000, guid: 4bbc3896cf391c94aa39141f6d0d5728, type: 3}
+      objectReference: {fileID: 21300000, guid: 1d4fa99d1f3405d419be6de1cff653b9, type: 3}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: lightController
       value: 
