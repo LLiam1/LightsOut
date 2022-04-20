@@ -49,14 +49,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUntilArrival: 0
-  startTime: 30
+  startTime: 10
   isMoving: 0
+  isHere: 0
   isElevatorActive: 1
   elevatorStatus: {fileID: 5115888596161998707}
   sound: {fileID: 3444588171815947331}
   moving: {fileID: 8300000, guid: af7a2ec5971d56240ad0132c7e812c7c, type: 3}
   stopped: {fileID: 8300000, guid: 7c1281b971c6d274e8426e3e45e06fb8, type: 3}
   here: {fileID: 8300000, guid: 589a8685d4765a143a5f9576b626760b, type: 3}
+  img: {fileID: 0}
+  fadeSpeed: 0.25
 --- !u!82 &3444588171815947331
 AudioSource:
   m_ObjectHideFlags: 0
