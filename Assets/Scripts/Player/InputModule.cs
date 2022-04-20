@@ -166,20 +166,25 @@ public class InputModule : MonoBehaviour
 
             //Player is Viewing Full Level
             playerController.isViewingFullLevel = true;
-            
+
         }
         else
         {
-            //Check Distance
-            if (Vector2.Distance(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position) > 0.01)
-            {
-                playerController.cam.transform.position
-                    = Vector3.Lerp(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime);
-                playerController.cam.transform.position
-                    = Vector3.MoveTowards(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime); ;
-            }
 
-            playerController.isViewingFullLevel = false;
+            if (playerController.cam != null && playerController.currentRoom != null)
+            {
+
+                //Check Distance
+                if (Vector2.Distance(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position) > 0.01)
+                {
+                    playerController.cam.transform.position
+                        = Vector3.Lerp(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime);
+                    playerController.cam.transform.position
+                        = Vector3.MoveTowards(playerController.cam.transform.position, playerController.currentRoom.pos.transform.position, playerController.camMoveSpeed * Time.deltaTime); ;
+                }
+
+                playerController.isViewingFullLevel = false;
+            }
         }
 
         

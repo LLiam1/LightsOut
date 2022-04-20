@@ -72,17 +72,15 @@ public class ElevatorScript : MonoBehaviour
 
         if (isHere)
         {
-
-
             Scene scene = SceneManager.GetActiveScene();
 
             if (scene.name == "Tutorial")
             {
-                StartCoroutine(FadeImageH(false, "level1"));
+                StartCoroutine(FadeImageH(false, "Level1"));
             }
-            else if (scene.name == "level1")
+            else if (scene.name == "Level1")
             {
-                StartCoroutine(FadeImageH(false, "level2"));
+                StartCoroutine(FadeImageH(false, "Level2"));
 
             }
             else

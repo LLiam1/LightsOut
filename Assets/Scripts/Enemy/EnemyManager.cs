@@ -67,11 +67,15 @@ public class EnemyManager : MonoBehaviour
 
     private void Update()
     {
-        //Current Room Light is On!
-        if (currentRoom.isLightOn)
+
+        if (currentRoom != null)
         {
-            //Flee
-            enemyState = EnemyState.Fleeing;
+            //Current Room Light is On!
+            if (currentRoom.isLightOn)
+            {
+                //Flee
+                enemyState = EnemyState.Fleeing;
+            }
         }
 
         //Chase Enemy
