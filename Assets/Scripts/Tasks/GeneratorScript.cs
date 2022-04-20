@@ -29,8 +29,15 @@ public class GeneratorScript : MonoBehaviour
             //All to make it rotate...
             if (Input.GetKey(KeyCode.Tab))
             {
-                rectTransform.Rotate(new Vector3(0, 0, speed * Time.deltaTime));
+                rectTransform.Rotate(new Vector3(0, 0, -speed * Time.deltaTime));
                 generatorCurrentVal += speed * Time.deltaTime;
+            }
+
+            if (generatorCurrentVal >= generatorCompleteVal)
+            {
+                isTaskCompleted = true;
+
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().generatorActiveCount++;
             }
         }
     }

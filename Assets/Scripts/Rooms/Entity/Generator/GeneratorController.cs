@@ -34,6 +34,11 @@ public class GeneratorController : MonoBehaviour
             currentPopup.SetActive(false);
         }
 
+        if (isGeneratorActive)
+        {
+            currentPopup.SetActive(false);
+        }
+
     }
 
 
