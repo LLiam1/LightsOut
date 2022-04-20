@@ -265,8 +265,8 @@ MonoBehaviour:
   inputModule: {fileID: 3075010276503761830}
   currentRoom: {fileID: 0}
   gameController: {fileID: 0}
-  rb: {fileID: 3075010276503761828}
-  moveSpeed: 6.5
+  rb: {fileID: 0}
+  moveSpeed: 12.5
   interactionKey: 101
   fullLevelViewKey: 32
   isPlayerInStaircase: 0
