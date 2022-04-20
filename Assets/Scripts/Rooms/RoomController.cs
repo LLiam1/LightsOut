@@ -113,14 +113,6 @@ public class RoomController : MonoBehaviour
             }
 
         }
-
-        //DevTools to Reset Level
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetLevel();
-        }
-
-        
     }
 
 

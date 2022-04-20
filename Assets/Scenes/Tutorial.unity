@@ -383,6 +383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fusebox 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7427736808076452432, guid: abe5c60cd233449cca7b8c398ecd32f1, type: 3}
+      propertyPath: fuseBoxTaskUI
+      value: 
+      objectReference: {fileID: 330742511}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abe5c60cd233449cca7b8c398ecd32f1, type: 3}
 --- !u!1 &301816331
@@ -577,6 +581,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5763541494447618300, guid: 0a15152ddf7944a84aaeb4f66e940aa9, type: 3}
   m_PrefabInstance: {fileID: 309231000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &330742511 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7875755650845247524, guid: 11120cfa3a87f4206a4c5f163424db93, type: 3}
+  m_PrefabInstance: {fileID: 439559474}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &421303977 stripped
 MonoBehaviour:
@@ -1430,6 +1439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 1741703793}
     - target: {fileID: 4946710944725221068, guid: 32744acbb412340a08db7778e1e27c0a, type: 3}
       propertyPath: uiParent
       value: 
