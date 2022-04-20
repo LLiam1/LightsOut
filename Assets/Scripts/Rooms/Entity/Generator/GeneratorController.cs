@@ -39,13 +39,11 @@ public class GeneratorController : MonoBehaviour
             currentPopup.SetActive(false);
         }
 
-<<<<<<< Updated upstream
         if (isGeneratorActive)
         {
             currentPopup.SetActive(false);
         }
-=======
-        //For Sound and Volume Based On Distance
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerPos = player.transform;
         if(isGeneratorActive == true){
@@ -68,8 +66,6 @@ public class GeneratorController : MonoBehaviour
         else{
             sound.volume = 1 - ((dist - soundDistMin) / (soundDistMax - soundDistMin));
         }
-
->>>>>>> Stashed changes
 
     }
 

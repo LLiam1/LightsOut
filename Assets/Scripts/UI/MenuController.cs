@@ -8,14 +8,9 @@ public class MenuController : MonoBehaviour
     //GameObjec: Main Menu 
     public GameObject mainMenu;
 
-    //GameObject: Level Selector
-    public GameObject levelSelector;
 
-    //GameObject: Settings Menu
-    public GameObject settingsMenu;
-
-    //Screne: Array of Levels
-    public Scene[] levels;
+    //GameObject: Credits Menu
+    public GameObject creditsMenu;
 
     private void Start()
     {
@@ -23,16 +18,28 @@ public class MenuController : MonoBehaviour
     }
 
 
-    private void DisplayMainMenu()
+    public void DisplayMainMenu()
     {
         //Set Main Menu Active
         mainMenu.SetActive(true);
-
-        //Disable other Menus
-        levelSelector.SetActive(false);
-        settingsMenu.SetActive(false);
+        creditsMenu.SetActive(false);
 
     }
 
+    public void DisplayCredits()
+    {
+        //Set Main Menu Active
+        mainMenu.SetActive(false);
+        creditsMenu.SetActive(true);
+    }
 
+    public void Play()
+    {
+        SceneManager.LoadScene("tutorial");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
