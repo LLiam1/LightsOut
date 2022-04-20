@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerInElevator;
 
     public AudioSource walkSound;
+    public AudioClip footsteps;
 
     //Bool: Checks Player Walking
     public bool isPlayerWalking;
@@ -106,6 +107,7 @@ public class PlayerController : MonoBehaviour
                 //Player is Walking
                 isPlayerWalking = true;
                 if(!walkSound.isPlaying){
+                    walkSound.clip = footsteps;
                     walkSound.Play();
                     
 

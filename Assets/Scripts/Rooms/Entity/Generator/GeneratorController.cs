@@ -8,6 +8,10 @@ public class GeneratorController : MonoBehaviour
     public GameObject popupPrefab;
 
     public AudioSource sound;
+    private GameObject player;
+    private Transform playerPos;
+    public float soundDistMin;
+    public float soundDistMax;
 
     public GameObject highlight;
 
@@ -23,6 +27,7 @@ public class GeneratorController : MonoBehaviour
     private void Start()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+
     }
 
     public void Update()
@@ -34,10 +39,37 @@ public class GeneratorController : MonoBehaviour
             currentPopup.SetActive(false);
         }
 
+<<<<<<< Updated upstream
         if (isGeneratorActive)
         {
             currentPopup.SetActive(false);
         }
+=======
+        //For Sound and Volume Based On Distance
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerPos = player.transform;
+        if(isGeneratorActive == true){
+            if(!sound.isPlaying){
+                sound.Play();
+            }
+        }
+        else{
+            sound.Pause();
+        }
+
+        float dist = Vector3.Distance(transform.position, playerPos.position);
+        if(dist < soundDistMin){
+            sound.volume = 1;
+        }
+
+        if(dist>soundDistMax){
+            sound.volume = 0;
+        }
+        else{
+            sound.volume = 1 - ((dist - soundDistMin) / (soundDistMax - soundDistMin));
+        }
+
+>>>>>>> Stashed changes
 
     }
 
@@ -81,6 +113,7 @@ public class GeneratorController : MonoBehaviour
 
         //Instantiate Popup
         currentPopup = Instantiate(popupPrefab, gameController.uiParent.transform.position, Quaternion.identity, gameController.uiParent.transform);
+        
 
         //Display Appropriate Amounts
         //currentPopup.GetComponentInChildren<GenPopupController>().progressbar.value = currentActivationAmt;

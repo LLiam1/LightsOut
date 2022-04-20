@@ -11,6 +11,13 @@ public class EnemyController : MonoBehaviour
     public EnemyState enemyState;
 
     public RoomModule currentRoom;
+    
+    //For Sound
+    private GameObject player;
+    public AudioSource enemyNoises;
+    private Transform playerPos;
+    public float soundDistMin;
+    public float soundDistMax;
 
     //Start and End Room For Pathing
     public RoomModule startRoom;
@@ -62,6 +69,7 @@ public class EnemyController : MonoBehaviour
     {
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
+            
             if (currentRoom.isLightOn)
             {
                 enemyState = EnemyState.Fleeing;
@@ -80,6 +88,28 @@ public class EnemyController : MonoBehaviour
             {
                 enemyState = EnemyState.Idle;
             }
+
+            //For Sound and Volume Based On Distance
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerPos = player.transform;
+            if(!enemyNoises.isPlaying){
+                enemyNoises.Play();
+            }
+        else{
+            enemyNoises.Pause();
+        }
+
+        float dist = Vector3.Distance(transform.position, playerPos.position);
+        if(dist < soundDistMin){
+            enemyNoises.volume = 1;
+        }
+
+        if(dist>soundDistMax){
+            enemyNoises.volume = 0;
+        }
+        else{
+            enemyNoises.volume = 1 - ((dist - soundDistMin) / (soundDistMax - soundDistMin));
+        }
 
             switch (enemyState)
             {
@@ -166,6 +196,7 @@ public class EnemyController : MonoBehaviour
                     transform.eulerAngles = new Vector3(0, 180, 0);
                     break;
             }
+
     }
 
     IEnumerator ChasePlayer()

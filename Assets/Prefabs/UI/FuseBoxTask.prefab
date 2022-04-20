@@ -1332,7 +1332,6 @@ MonoBehaviour:
   toggleImage: {fileID: 6604325421799426988}
   toggleUp: {fileID: 21300000, guid: c3d24b3f4325d684daac8a950f8e103c, type: 3}
   toggleDown: {fileID: 21300000, guid: 0c65fdb79538e8448893f17418756e46, type: 3}
-  fuse: {fileID: 0}
 --- !u!1 &6604325421437637607
 GameObject:
   m_ObjectHideFlags: 0

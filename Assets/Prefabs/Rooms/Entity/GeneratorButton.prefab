@@ -129,10 +129,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPrefab: {fileID: 56843641284960611, guid: fde5582e5d743d64da74554e4809c433, type: 3}
-  sound: {fileID: 0}
+  sound: {fileID: 8113414610119978228}
+  soundDistMin: 1
+  soundDistMax: 10
   highlight: {fileID: 0}
   isGeneratorActive: 0
   currentPopup: {fileID: 0}
+  popupScript: {fileID: 0}
 --- !u!58 &3540979457023805848
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -159,18 +162,18 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 589a8685d4765a143a5f9576b626760b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fd91d4f59928b934382ea6003c1bb196, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.142
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 203
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0.1
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -205,7 +208,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.216
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -235,7 +238,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.248
       inSlope: 0
       outSlope: 0
       tangentMode: 0

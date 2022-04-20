@@ -13,6 +13,8 @@ public class InputModule : MonoBehaviour
     public GameObject flashlight;
     public bool isTutorial;
     public Text tutorialText;
+    public AudioSource sound;
+    public AudioClip lightswitch;
 
     private void Awake()
     {
@@ -82,6 +84,8 @@ public class InputModule : MonoBehaviour
         {
             for (int i = 0; i <= playerController.collisionModule.currentCollisions.Count - 1; i++)
             {
+                    sound.clip = lightswitch;
+                    sound.Play();
                 //Check if Gameobject is a LighSwitch
                 if (playerController.collisionModule.currentCollisions[i].tag == "LightSwitch")
                 {
@@ -197,7 +201,7 @@ public class InputModule : MonoBehaviour
 
             if (col.gameObject.tag == "Generator")
             {
-                tutorialText.text = "Press E to Fix the Generator to Power the Elevator.";
+                tutorialText.text = "Press E to Fix the Generator to Power the Elevator. To Fix the Generator, Hold TAB.";
             }
 
             if (col.gameObject.tag == "LightSwitch")

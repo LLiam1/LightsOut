@@ -42,6 +42,13 @@ public class EnemyManager : MonoBehaviour
 
     public float timer = 0;
     public float maxTime;
+        //For Sound
+    public AudioSource enemyNoises;
+    public AudioClip roaming;
+    public AudioClip jumpscareNoise;
+    private Transform playerPos;
+    public float soundDistMin;
+    public float soundDistMax;
 
     //Current Enemy Path
     public List<RoomModule> currentPath = new List<RoomModule>();
@@ -71,6 +78,28 @@ public class EnemyManager : MonoBehaviour
         if (Vector2.Distance(transform.position, player.transform.position) < maxPlayerDist)
         { 
             enemyState = EnemyState.Chasing;
+        }
+
+        
+        //For Sound and Volume Based On Distance
+        playerPos = player.transform;
+            if(!enemyNoises.isPlaying){
+                enemyNoises.Play();
+            }
+        else{
+            enemyNoises.Pause();
+        }
+
+        float dist = Vector3.Distance(transform.position, playerPos.position);
+        if(dist < soundDistMin){
+            enemyNoises.volume = 1;
+        }
+
+        if(dist>soundDistMax){
+            enemyNoises.volume = 0;
+        }
+        else{
+            enemyNoises.volume = 1 - ((dist - soundDistMin) / (soundDistMax - soundDistMin));
         }
 
         switch (enemyState)
@@ -253,6 +282,11 @@ public class EnemyManager : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("JumpScare");
+            enemyNoises.clip = jumpscareNoise;
+            for(int i = 0; i < 1; i++){
+            enemyNoises.Stop();
+            enemyNoises.Play();
+            }
         }
     }
 

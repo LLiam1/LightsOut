@@ -31,6 +31,17 @@ public class GeneratorScript : MonoBehaviour
             {
                 rectTransform.Rotate(new Vector3(0, 0, -speed * Time.deltaTime));
                 generatorCurrentVal += speed * Time.deltaTime;
+
+                if(generatorCompleteVal <= generatorCurrentVal){
+                    isTaskCompleted = true;
+                }
+
+                if(!genAudio.isPlaying){
+                    genAudio.Play();
+                }
+            }
+            else{
+                genAudio.Pause();
             }
 
             if (generatorCurrentVal >= generatorCompleteVal)

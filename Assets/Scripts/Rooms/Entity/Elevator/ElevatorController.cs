@@ -10,6 +10,7 @@ public class ElevatorController : MonoBehaviour
 
     private bool isElevatorOpen;
 
+
     public GameObject elevatorObject;
 
     // Start is called before the first frame update
