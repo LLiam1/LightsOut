@@ -83,8 +83,6 @@ public class CollisionModule : MonoBehaviour
             playerController.currentRoom = collision.gameObject.GetComponent<RoomModule>();
         }
 
-        //Do NOT add Rooms to collisions
-
         if (collision.gameObject.tag != "Room")
         {
             //Set the current Collision object
