@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ElevatorScript : MonoBehaviour
 {
@@ -22,12 +23,16 @@ public class ElevatorScript : MonoBehaviour
     public AudioClip stopped;
     public AudioClip here;
 
-    
+    public Image img;
+
+
+    public float fadeSpeed = 0.25f;
 
     void Start(){
         timeUntilArrival = startTime;
         isElevatorActive = false; 
         isHere = false;
+
     }
 
     void Awake()
@@ -56,16 +61,36 @@ public class ElevatorScript : MonoBehaviour
                 sound.Play();
                 sound.loop = false;
             }
-            
+
+      
+
         }
 
         else{
             elevatorStatus.text = "Not Moving";
-            
-
         }
 
+        if (isHere)
+        {
 
+
+            Scene scene = SceneManager.GetActiveScene();
+
+            if (scene.name == "Tutorial")
+            {
+                StartCoroutine(FadeImageH(false, "level1"));
+            }
+            else if (scene.name == "level1")
+            {
+                StartCoroutine(FadeImageH(false, "level2"));
+
+            }
+            else
+            {
+                StartCoroutine(FadeImageH(false, "main-menu"));
+            } 
+
+        }
     }
 
     public void ElevatorGo(){
@@ -80,5 +105,37 @@ public class ElevatorScript : MonoBehaviour
         }
 
         Debug.Log("test");
+    }
+
+
+
+    IEnumerator FadeImageH(bool fadeAway, string nextlevel)
+    {
+        img.gameObject.SetActive(true);
+
+        // fade from opaque to transparent
+        if (fadeAway)
+        {
+            // loop over 1 second backwards
+            for (float i = 1; i >= 0; i -= Time.deltaTime * fadeSpeed)
+            {
+                // set color with i as alpha
+                img.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+        // fade from transparent to opaque
+        else
+        {
+            // loop over 1 second
+            for (float i = 0; i <= 1; i += Time.deltaTime * fadeSpeed)
+            {
+                // set color with i as alpha
+                img.color = new Color(0, 0, 0, i);
+                yield return null;
+            }
+        }
+
+        SceneManager.LoadScene(nextlevel);
     }
 }
